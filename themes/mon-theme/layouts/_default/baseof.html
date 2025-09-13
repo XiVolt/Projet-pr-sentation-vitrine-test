@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ .Title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  {{ partial "header.html" . }}
+  <main>
+    {{ partial "hero.html" . }}
+    {{ partial "about.html" . }}
+  {{ partial "services.html" . }}
+  {{ partial "projects.html" . }}
+  {{ partial "testimonials.html" . }}
+  {{ partial "team.html" . }}
+    {{ partial "contact.html" . }}
+  </main>
+  {{ partial "footer.html" . }}
+  <script src="/js/scroll-animations.js"></script>
+</body>
+</html>

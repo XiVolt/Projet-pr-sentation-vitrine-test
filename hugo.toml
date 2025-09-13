@@ -1,0 +1,4 @@
+baseURL = 'https://example.org/'
+languageCode = "fr-fr"
+title = "Mon site vitrine"
+theme = "mon-theme"
