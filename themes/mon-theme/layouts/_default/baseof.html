@@ -4,23 +4,105 @@
   <meta charset="UTF-8">
   <title>{{- .Title -}} - VitrinePro</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/style.css">
+  <meta name="description" content="VitrinePro - Solutions digitales innovantes pour votre entreprise">
+  
+  <!-- Google Fonts - Typography moderne -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <!-- Modern CSS -->
+  <link rel="stylesheet" href="{{ "css/modern-style.css" | relURL }}">
+  
+  <!-- Modern Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Smooth scroll polyfill -->
+  <script>
+    // Smooth scroll polyfill for older browsers
+    if (!('scrollBehavior' in document.documentElement.style)) {
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/gh/iamdustan/smoothscroll@master/dist/smoothscroll.min.js';
+      document.head.appendChild(script);
+    }
+  </script>
 </head>
 <body>
+  <!-- Progress bar pour le scroll -->
+  <div class="scroll-progress-bar" id="scrollProgressBar"></div>
+  
   {{- partial "header.html" . -}}
+  
   <main>
     {{- if .IsHome -}}
-    {{- partial "hero.html" . -}}
-    {{- partial "about.html" . -}}
-    {{- partial "services.html" . -}}
-    {{- partial "projects.html" . -}}
-    {{- partial "contact.html" . -}}
+    <!-- Hero section avec background et animations -->
+    <section class="hero" id="hero">
+      <div class="hero-background">
+        <div class="hero-overlay"></div>
+      </div>
+      <div class="hero-content">
+        <div class="container">
+          <div class="hero-text animate-fade-up">
+            <h1 class="hero-title">
+              <span class="highlight">Transformez</span> votre présence digitale
+            </h1>
+            <p class="hero-subtitle">
+              Nous créons des solutions sur-mesure qui propulsent votre entreprise vers le succès. 
+              Innovation, qualité et performance au service de vos ambitions.
+            </p>
+            <div class="hero-buttons">
+              <a href="#contact" class="btn btn-primary btn-animated">
+                <span>Démarrer un projet</span>
+                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </a>
+              <a href="#about" class="btn btn-outline">
+                <span>En savoir plus</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-scroll-indicator">
+        <div class="scroll-mouse">
+          <div class="scroll-wheel"></div>
+        </div>
+        <span>Scroll</span>
+      </div>
+    </section>
+
+    <!-- Sections du site -->
+    <section class="about" id="about">
+      {{- partial "about.html" . -}}
+    </section>
+    
+    <section class="services" id="services">
+      {{- partial "services.html" . -}}
+    </section>
+    
+    <section class="projects" id="projects">
+      {{- partial "projects.html" . -}}
+    </section>
+    
+    <section class="team" id="team">
+      {{- partial "team.html" . -}}
+    </section>
+    
+    <section class="contact" id="contact">
+      {{- partial "contact.html" . -}}
+    </section>
     {{- else -}}
     {{- block "main" . -}}{{- end -}}
     {{- end -}}
   </main>
+  
   {{- partial "footer.html" . -}}
-  <script src="/js/main.js"></script>
+  
+  <!-- Modern Scripts -->
+  <script src="{{ "js/modern-script.js" | relURL }}"></script>
 </body>
 </html>

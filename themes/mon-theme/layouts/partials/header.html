@@ -1,14 +1,53 @@
-<header class="site-header">
+<header class="site-header" id="header">
   <nav class="navbar">
-    <div class="logo">VitrinePro</div>
-    <ul class="nav-links">
-      <li><a href="/">Accueil</a></li>
-      <li><a href="/about">À propos</a></li>
-      <li><a href="/services">Services</a></li>
-      <li><a href="/projects">Projets</a></li>
-      <li><a href="/contact">Contact</a></li>
-    </ul>
-    <button id="darkModeToggle" aria-label="Activer/désactiver le mode sombre" class="dark-toggle">🌙</button>
-    <div class="nav-toggle" id="navToggle">☰</div>
+    <div class="nav-container">
+      <!-- Logo -->
+      <div class="nav-brand">
+        <a href="/" class="logo">
+          <span class="logo-icon">⚡</span>
+          <span class="logo-text">VitrinePro</span>
+        </a>
+      </div>
+
+      <!-- Navigation Links -->
+      <ul class="nav-menu" id="navMenu">
+        <li class="nav-item">
+          <a href="/" class="nav-link {{ if .IsHome }}active{{ end }}">Accueil</a>
+        </li>
+        <li class="nav-item">
+          <a href="#about" class="nav-link">À propos</a>
+        </li>
+        <li class="nav-item">
+          <a href="#services" class="nav-link">Services</a>
+        </li>
+        <li class="nav-item">
+          <a href="#projects" class="nav-link">Projets</a>
+        </li>
+        <li class="nav-item">
+          <a href="#team" class="nav-link">Équipe</a>
+        </li>
+        <li class="nav-item">
+          <a href="#contact" class="nav-link">Contact</a>
+        </li>
+      </ul>
+
+      <!-- Actions -->
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Changer le thème">
+          <span class="theme-icon theme-icon-light">🌙</span>
+          <span class="theme-icon theme-icon-dark">☀️</span>
+        </button>
+        <a href="#contact" class="btn btn-primary btn-small">
+          <span>Devis gratuit</span>
+        </a>
+      </div>
+
+      <!-- Mobile menu toggle -->
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
   </nav>
 </header>

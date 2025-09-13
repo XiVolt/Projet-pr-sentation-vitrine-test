@@ -2,37 +2,37 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Accueil on Mon site vitrine</title>
-    <link>http://localhost:1314/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content in Accueil on Mon site vitrine</description>
     <generator>Hugo</generator>
     <language>fr-fr</language>
-    <atom:link href="http://localhost:1314/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>À propos</title>
-      <link>http://localhost:1314/about/</link>
+      <link>http://localhost:1313/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1314/about/</guid>
+      <guid>http://localhost:1313/about/</guid>
       <description>&lt;p&gt;Notre histoire commence par une passion commune pour l&amp;rsquo;innovation et l&amp;rsquo;excellence.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Contact</title>
-      <link>http://localhost:1314/contact/</link>
+      <link>http://localhost:1313/contact/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1314/contact/</guid>
+      <guid>http://localhost:1313/contact/</guid>
       <description>&lt;p&gt;Parlons de votre projet ensemble.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Nos projets</title>
-      <link>http://localhost:1314/projects/</link>
+      <link>http://localhost:1313/projects/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1314/projects/</guid>
+      <guid>http://localhost:1313/projects/</guid>
       <description>&lt;p&gt;Découvrez nos réalisations les plus marquantes.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Nos services</title>
-      <link>http://localhost:1314/services/</link>
+      <link>http://localhost:1313/services/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1314/services/</guid>
+      <guid>http://localhost:1313/services/</guid>
       <description>&lt;p&gt;Découvrez notre gamme complète de services personnalisés.&lt;/p&gt;</description>
     </item>
   </channel>

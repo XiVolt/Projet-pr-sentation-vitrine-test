@@ -1,21 +1,288 @@
-<section id="projects" class="projects-section">
-  <h2>Ils nous ont fait confiance</h2>
-  <div class="projects-grid">
-    <div class="project-card">
-      <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=400&q=80" alt="Plateforme associative">
-      <div class="project-caption">Plateforme associative : +200 membres connectés</div>
+<section class="section projects-section" id="projects">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Notre Musique</h2>
+      <p class="section-description">
+        Découvrez nos derniers albums, singles et les moments forts de notre parcours musical depuis 2021.
+      </p>
     </div>
-    <div class="project-card">
-      <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" alt="Site e-commerce">
-      <div class="project-caption">Site e-commerce : 3x plus de ventes en 6 mois</div>
+
+    <!-- Portfolio Filter -->
+    <div class="portfolio-filters animate-on-scroll">
+      <button class="filter-btn active" data-filter="all">Tout</button>
+      <button class="filter-btn" data-filter="album">Albums</button>
+      <button class="filter-btn" data-filter="single">Singles</button>
+      <button class="filter-btn" data-filter="live">Concerts</button>
+      <button class="filter-btn" data-filter="video">Clips</button>
     </div>
-    <div class="project-card">
-      <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&q=80" alt="Application mobile">
-      <div class="project-caption">App mobile : 4,8/5 sur les stores</div>
+
+    <!-- Portfolio Grid -->
+    <div class="portfolio-grid">
+      <div class="grid grid-3">
+        
+        <!-- Project 1: Premier Album -->
+        <div class="project-card animate-on-scroll" data-category="album">
+          <div class="project-image">
+            <div class="project-placeholder">
+              <div class="placeholder-icon">�</div>
+              <div class="project-overlay">
+                <div class="project-actions">
+                  <button class="project-btn">Écouter</button>
+                  <button class="project-btn">Démo live</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <div class="project-category">E-commerce</div>
+            <h3 class="project-title">Boutique Mode Élégante</h3>
+            <p class="project-description">
+              Boutique e-commerce moderne avec paiement sécurisé, gestion des stocks et interface responsive.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">Shopify</span>
+              <span class="tech-tag">React</span>
+              <span class="tech-tag">Stripe</span>
+            </div>
+            <div class="project-stats">
+              <div class="stat">
+                <span class="stat-number">+250%</span>
+                <span class="stat-label">Ventes</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number">4.8/5</span>
+                <span class="stat-label">Satisfaction</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: Corporate Website -->
+        <div class="project-card animate-on-scroll" data-category="web">
+          <div class="project-image">
+            <div class="project-placeholder">
+              <div class="placeholder-icon">🏢</div>
+              <div class="project-overlay">
+                <div class="project-actions">
+                  <button class="project-btn">Voir le projet</button>
+                  <button class="project-btn">Démo live</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <div class="project-category">Site Corporate</div>
+            <h3 class="project-title">TechCorp Solutions</h3>
+            <p class="project-description">
+              Site corporate moderne avec animation fluides, CMS personnalisé et optimisation SEO avancée.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">Hugo</span>
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">Netlify</span>
+            </div>
+            <div class="project-stats">
+              <div class="stat">
+                <span class="stat-number">95</span>
+                <span class="stat-label">Score SEO</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number">2s</span>
+                <span class="stat-label">Temps de charge</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3: Mobile App -->
+        <div class="project-card animate-on-scroll" data-category="app">
+          <div class="project-image">
+            <div class="project-placeholder">
+              <div class="placeholder-icon">📱</div>
+              <div class="project-overlay">
+                <div class="project-actions">
+                  <button class="project-btn">Voir le projet</button>
+                  <button class="project-btn">App Store</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <div class="project-category">Application Mobile</div>
+            <h3 class="project-title">FitTracker Pro</h3>
+            <p class="project-description">
+              Application mobile de fitness avec suivi d'activités, programmes personnalisés et interface intuitive.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">React Native</span>
+              <span class="tech-tag">Firebase</span>
+              <span class="tech-tag">Analytics</span>
+            </div>
+            <div class="project-stats">
+              <div class="stat">
+                <span class="stat-number">50K+</span>
+                <span class="stat-label">Utilisateurs</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number">4.7/5</span>
+                <span class="stat-label">Note Store</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4: Restaurant Website -->
+        <div class="project-card animate-on-scroll" data-category="web">
+          <div class="project-image">
+            <div class="project-placeholder">
+              <div class="placeholder-icon">🍽️</div>
+              <div class="project-overlay">
+                <div class="project-actions">
+                  <button class="project-btn">Voir le projet</button>
+                  <button class="project-btn">Démo live</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <div class="project-category">Site Vitrine</div>
+            <h3 class="project-title">Bistrot du Chef</h3>
+            <p class="project-description">
+              Site vitrine pour restaurant avec menu interactif, réservation en ligne et galerie photos appétissante.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">WordPress</span>
+              <span class="tech-tag">OpenTable</span>
+              <span class="tech-tag">Instagram</span>
+            </div>
+            <div class="project-stats">
+              <div class="stat">
+                <span class="stat-number">+180%</span>
+                <span class="stat-label">Réservations</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number">98%</span>
+                <span class="stat-label">Uptime</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 5: SaaS Platform -->
+        <div class="project-card animate-on-scroll" data-category="app">
+          <div class="project-image">
+            <div class="project-placeholder">
+              <div class="placeholder-icon">⚡</div>
+              <div class="project-overlay">
+                <div class="project-actions">
+                  <button class="project-btn">Voir le projet</button>
+                  <button class="project-btn">Essai gratuit</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <div class="project-category">SaaS Platform</div>
+            <h3 class="project-title">ProjectFlow</h3>
+            <p class="project-description">
+              Plateforme SaaS de gestion de projets avec dashboard analytique, collaboration temps réel et API.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">Vue.js</span>
+              <span class="tech-tag">Node.js</span>
+              <span class="tech-tag">PostgreSQL</span>
+            </div>
+            <div class="project-stats">
+              <div class="stat">
+                <span class="stat-number">1000+</span>
+                <span class="stat-label">Entreprises</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number">99.9%</span>
+                <span class="stat-label">Disponibilité</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 6: Brand Identity -->
+        <div class="project-card animate-on-scroll" data-category="design">
+          <div class="project-image">
+            <div class="project-placeholder">
+              <div class="placeholder-icon">🎨</div>
+              <div class="project-overlay">
+                <div class="project-actions">
+                  <button class="project-btn">Voir le projet</button>
+                  <button class="project-btn">Cas d'étude</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <div class="project-category">Identité Visuelle</div>
+            <h3 class="project-title">GreenTech Startup</h3>
+            <p class="project-description">
+              Identité visuelle complète pour startup tech : logo, charte graphique, site web et supports marketing.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">Figma</span>
+              <span class="tech-tag">Adobe CC</span>
+              <span class="tech-tag">Webflow</span>
+            </div>
+            <div class="project-stats">
+              <div class="stat">
+                <span class="stat-number">300%</span>
+                <span class="stat-label">Brand Recognition</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number">5M€</span>
+                <span class="stat-label">Levée de fonds</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
-    <div class="project-card">
-      <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80" alt="Outil de gestion">
-      <div class="project-caption">Outil de gestion : gain de temps x2</div>
+
+    <!-- Testimonials Section -->
+    <div class="testimonials-section animate-on-scroll">
+      <h3 class="testimonials-title">Ce que disent nos clients</h3>
+      <div class="testimonials-grid">
+        <div class="grid grid-2">
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              "VitrinePro a transformé notre présence en ligne. Leur expertise technique et leur créativité ont dépassé nos attentes."
+            </div>
+            <div class="testimonial-author">
+              <div class="author-avatar">👨‍💼</div>
+              <div class="author-info">
+                <div class="author-name">Marc Dubois</div>
+                <div class="author-title">CEO, TechCorp</div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              "Une équipe professionnelle qui sait écouter. Le résultat final est exactement ce que nous voulions, voire mieux !"
+            </div>
+            <div class="testimonial-author">
+              <div class="author-avatar">👩‍🍳</div>
+              <div class="author-info">
+                <div class="author-name">Sophie Martin</div>
+                <div class="author-title">Propriétaire, Bistrot du Chef</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="projects-cta animate-on-scroll">
+      <h3>Votre projet mérite le meilleur</h3>
+      <p>Discutons de vos besoins et créons ensemble quelque chose d'exceptionnel</p>
+      <a href="#contact" class="btn btn-primary btn-large">Démarrer un projet</a>
     </div>
   </div>
 </section>
