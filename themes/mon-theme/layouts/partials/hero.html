@@ -1,11 +1,76 @@
-<section id="hero" class="hero-section">
-  <div class="hero-bg"></div>
-  <div class="hero-content">
-    <div style="max-width:120px;margin:0 auto 1.5rem auto;">
-      <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="60" cy="60" r="60" fill="var(--main-color)" fill-opacity="0.13"/><path d="M40 70 Q60 40 80 70" stroke="var(--main-color)" stroke-width="4" fill="none"/><circle cx="50" cy="60" r="4" fill="var(--main-color)"/><circle cx="70" cy="60" r="4" fill="var(--main-color)"/></svg>
+<section id="hero" class="hero-section musical-hero">
+  <!-- Background Image du Groupe -->
+  <div class="hero-background">
+    <div class="hero-image">
+      <!-- Placeholder pour photo de groupe sur scène -->
+      <div class="band-photo-placeholder">
+        <div class="stage-lights">
+          <div class="light red"></div>
+          <div class="light blue"></div>
+          <div class="light purple"></div>
+        </div>
+        <div class="band-silhouettes">
+          <div class="member guitarist">🎸</div>
+          <div class="member vocalist">🎤</div>
+          <div class="member bassist">🎸</div>
+          <div class="member drummer">🥁</div>
+        </div>
+      </div>
     </div>
-    <h1>Ensemble, donnons vie à vos idées</h1>
-    <p>Depuis 2012, nous accompagnons les entreprises et associations qui veulent faire la différence. Notre équipe s’engage à vos côtés pour révéler le meilleur de votre projet, avec passion et créativité.</p>
-    <a href="#about" class="btn btn-primary">Notre histoire</a>
+    <div class="hero-overlay"></div>
+  </div>
+  
+  <!-- Contenu Principal -->
+  <div class="hero-content">
+    <div class="hero-text">
+      <h1 class="band-logo">ELECTRIC WAVES</h1>
+      <p class="band-subtitle">POP-ROCK INDIE • FRANCE</p>
+      
+      <!-- Countdown du prochain concert -->
+      <div class="next-concert">
+        <h3>PROCHAIN CONCERT DANS...</h3>
+        <div class="countdown-timer" id="countdown">
+          <div class="time-unit">
+            <span class="time-number" id="days">42</span>
+            <span class="time-label">JOURS</span>
+          </div>
+          <div class="time-unit">
+            <span class="time-number" id="hours">15</span>
+            <span class="time-label">HEURES</span>
+          </div>
+          <div class="time-unit">
+            <span class="time-number" id="minutes">30</span>
+            <span class="time-label">MINUTES</span>
+          </div>
+          <div class="time-unit">
+            <span class="time-number" id="seconds">45</span>
+            <span class="time-label">SECONDES</span>
+          </div>
+        </div>
+        
+        <!-- Info concert -->
+        <div class="concert-info">
+          <div class="concert-date">22 NOVEMBRE 2025</div>
+          <div class="concert-venue">STEREOLUX • NANTES</div>
+          <a href="#concerts" class="btn-tickets">BILLETS DISPONIBLES</a>
+        </div>
+      </div>
+      
+      <!-- Actions principales -->
+      <div class="hero-actions">
+        <a href="#music" class="btn btn-primary btn-hero">
+          🎵 ÉCOUTER NOTRE MUSIQUE
+        </a>
+        <a href="#concerts" class="btn btn-secondary btn-hero">
+          🎤 DATES DE CONCERTS
+        </a>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Indicateur de scroll -->
+  <div class="scroll-down">
+    <div class="scroll-text">DÉCOUVRIR ELECTRIC WAVES</div>
+    <div class="scroll-arrow">↓</div>
   </div>
 </section>

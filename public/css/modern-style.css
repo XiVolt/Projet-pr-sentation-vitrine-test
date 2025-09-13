@@ -1,48 +1,61 @@
-/* ===== MODERN PROFESSIONAL CSS SYSTEM ===== */
+/* ===== ELECTRIC WAVES - MUSICAL DESIGN SYSTEM ===== */
 
-/* Root Variables for Consistent Design System */
+/* Root Variables for Musical Theme */
 :root {
-  /* Modern Color Palette */
-  --primary: #2563eb;
-  --primary-dark: #1d4ed8;
-  --primary-light: #3b82f6;
-  --secondary: #7c3aed;
-  --accent: #06b6d4;
-  --success: #10b981;
-  --warning: #f59e0b;
-  --error: #ef4444;
+  /* Musical Color Palette */
+  --primary: #ff4081; /* Electric Pink */
+  --primary-dark: #c51162;
+  --primary-light: #ff79b0;
+  --secondary: #651fff; /* Electric Purple */
+  --accent: #00e5ff; /* Electric Cyan */
+  --success: #00c853;
+  --warning: #ffa000;
+  --error: #d50000;
+  
+  /* Musical Gradient Colors */
+  --gradient-music: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --gradient-concert: linear-gradient(135deg, #ff4081 0%, #651fff 100%);
+  --gradient-neon: linear-gradient(135deg, #00e5ff 0%, #ff4081 100%);
+  --gradient-dark: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  
+  /* Dark Musical Theme */
+  --dark-bg: #0a0a0f;
+  --dark-surface: #1a1a2e;
+  --dark-card: #16213e;
+  --neon-glow: 0 0 20px rgba(255, 64, 129, 0.6);
   
   /* Neutral Colors */
   --white: #ffffff;
-  --gray-50: #f9fafb;
-  --gray-100: #f3f4f6;
-  --gray-200: #e5e7eb;
-  --gray-300: #d1d5db;
-  --gray-400: #9ca3af;
-  --gray-500: #6b7280;
-  --gray-600: #4b5563;
-  --gray-700: #374151;
-  --gray-800: #1f2937;
-  --gray-900: #111827;
+  --gray-50: #f8fafc;
+  --gray-100: #f1f5f9;
+  --gray-200: #e2e8f0;
+  --gray-300: #cbd5e1;
+  --gray-400: #94a3b8;
+  --gray-500: #64748b;
+  --gray-600: #475569;
+  --gray-700: #334155;
+  --gray-800: #1e293b;
+  --gray-900: #0f172a;
   
-  /* Text Colors */
-  --text-primary: var(--gray-900);
-  --text-secondary: var(--gray-600);
-  --text-muted: var(--gray-500);
-  --text-light: var(--white);
+  /* Text Colors for Musical Theme */
+  --text-primary: var(--white);
+  --text-secondary: var(--gray-300);
+  --text-muted: var(--gray-400);
+  --text-neon: var(--accent);
+  --text-electric: var(--primary);
   
   /* Background Colors */
-  --bg-primary: var(--white);
-  --bg-secondary: var(--gray-50);
-  --bg-card: var(--white);
-  --bg-overlay: rgba(0, 0, 0, 0.5);
+  --bg-primary: var(--dark-bg);
+  --bg-secondary: var(--dark-surface);
+  --bg-card: var(--dark-card);
+  --bg-overlay: rgba(10, 10, 15, 0.9);
   
   /* Typography */
   --font-primary: 'Inter', system-ui, -apple-system, sans-serif;
   --font-heading: 'Poppins', system-ui, -apple-system, sans-serif;
-  --font-mono: 'SF Mono', Monaco, monospace;
+  --font-mono: 'JetBrains Mono', monospace;
   
-  /* Spacing System */
+  /* Musical Spacing */
   --space-1: 0.25rem;
   --space-2: 0.5rem;
   --space-3: 0.75rem;
@@ -57,25 +70,27 @@
   --space-24: 6rem;
   --space-32: 8rem;
   
-  /* Shadows */
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  /* Musical Shadows */
+  --shadow-sm: 0 1px 2px rgba(255, 64, 129, 0.1);
+  --shadow: 0 4px 6px rgba(255, 64, 129, 0.1), 0 1px 3px rgba(255, 64, 129, 0.08);
+  --shadow-md: 0 10px 15px rgba(255, 64, 129, 0.1), 0 4px 6px rgba(255, 64, 129, 0.05);
+  --shadow-lg: 0 25px 50px rgba(255, 64, 129, 0.15);
+  --shadow-neon: 0 0 20px rgba(255, 64, 129, 0.4), 0 0 40px rgba(255, 64, 129, 0.2);
+  --shadow-glow: 0 0 30px rgba(0, 229, 255, 0.3);
   
-  /* Border Radius */
+  /* Musical Border Radius */
   --radius-sm: 0.25rem;
-  --radius: 0.375rem;
-  --radius-md: 0.5rem;
-  --radius-lg: 0.75rem;
-  --radius-xl: 1rem;
+  --radius: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
   --radius-full: 9999px;
   
-  /* Transitions */
-  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
-  --transition: 300ms cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  /* Musical Transitions */
+  --transition-fast: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition: 400ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 600ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
   
   /* Z-index Scale */
   --z-dropdown: 1000;
@@ -88,18 +103,7 @@
   --z-toast: 1080;
 }
 
-/* Dark Mode Variables */
-[data-theme="dark"] {
-  --text-primary: var(--gray-100);
-  --text-secondary: var(--gray-300);
-  --text-muted: var(--gray-400);
-  --bg-primary: var(--gray-900);
-  --bg-secondary: var(--gray-800);
-  --bg-card: var(--gray-800);
-  --bg-overlay: rgba(0, 0, 0, 0.7);
-}
-
-/* ===== GLOBAL STYLES ===== */
+/* ===== GLOBAL STYLES - MUSICAL THEME ===== */
 
 * {
   margin: 0;
@@ -117,9 +121,40 @@ body {
   font-family: var(--font-primary);
   font-weight: 400;
   color: var(--text-primary);
-  background-color: var(--bg-primary);
-  transition: background-color var(--transition), color var(--transition);
+  background: var(--bg-primary);
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(255, 64, 129, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(0, 229, 255, 0.1) 0%, transparent 50%);
+  transition: all var(--transition);
   overflow-x: hidden;
+}
+
+/* ===== MUSICAL ANIMATIONS ===== */
+
+@keyframes musicWave {
+  0%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(1.5); }
+}
+
+@keyframes neonPulse {
+  0%, 100% { 
+    box-shadow: 0 0 5px var(--primary), 0 0 10px var(--primary), 0 0 15px var(--primary);
+  }
+  50% { 
+    box-shadow: 0 0 10px var(--primary), 0 0 20px var(--primary), 0 0 30px var(--primary);
+  }
+}
+
+@keyframes electricFlow {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100vw); }
+}
+
+@keyframes concertLights {
+  0%, 100% { opacity: 0.3; }
+  25% { opacity: 0.8; }
+  50% { opacity: 0.5; }
+  75% { opacity: 0.9; }
 }
 
 /* ===== SCROLL PROGRESS BAR ===== */
@@ -129,43 +164,65 @@ body {
   top: 0;
   left: 0;
   width: 0%;
-  height: 3px;
-  background: linear-gradient(90deg, var(--primary), var(--accent));
+  height: 4px;
+  background: var(--gradient-concert);
+  box-shadow: var(--shadow-neon);
   z-index: var(--z-toast);
   transition: width var(--transition-fast);
 }
 
-/* ===== TYPOGRAPHY ===== */
+/* ===== MUSICAL TYPOGRAPHY ===== */
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
-  font-weight: 600;
-  line-height: 1.2;
+  font-weight: 700;
+  line-height: 1.1;
   color: var(--text-primary);
   margin-bottom: var(--space-4);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-h1 { font-size: 3.5rem; font-weight: 700; }
-h2 { font-size: 2.5rem; }
-h3 { font-size: 2rem; }
-h4 { font-size: 1.5rem; }
-h5 { font-size: 1.25rem; }
-h6 { font-size: 1.125rem; }
+h1 { 
+  font-size: 4rem; 
+  font-weight: 800;
+  background: var(--gradient-neon);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none;
+}
+
+h2 { 
+  font-size: 2.75rem;
+  color: var(--text-electric);
+}
+
+h3 { 
+  font-size: 2.25rem;
+  color: var(--text-neon);
+}
+
+h4 { font-size: 1.75rem; }
+h5 { font-size: 1.5rem; }
+h6 { font-size: 1.25rem; }
 
 p {
   margin-bottom: var(--space-4);
   color: var(--text-secondary);
-  line-height: 1.7;
+  line-height: 1.8;
+  font-size: 1.1rem;
 }
 
 a {
   color: var(--primary);
   text-decoration: none;
-  transition: color var(--transition);
+  transition: all var(--transition);
+  position: relative;
 }
 
 a:hover {
-  color: var(--primary-dark);
+  color: var(--accent);
+  text-shadow: 0 0 8px currentColor;
 }
 
 /* ===== LAYOUT UTILITIES ===== */
@@ -178,6 +235,18 @@ a:hover {
 
 .section {
   padding: var(--space-24) 0;
+  position: relative;
+}
+
+.section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--primary), transparent);
+  opacity: 0.3;
 }
 
 .section-sm {
@@ -188,7 +257,7 @@ a:hover {
   padding: var(--space-32) 0;
 }
 
-/* ===== HEADER & NAVIGATION ===== */
+/* ===== MUSICAL HEADER & NAVIGATION ===== */
 
 .site-header {
   position: fixed;

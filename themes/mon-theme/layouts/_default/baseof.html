@@ -2,9 +2,9 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>{{- .Title -}} - VitrinePro</title>
+  <title>{{- .Title -}} - Electric Waves</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="VitrinePro - Solutions digitales innovantes pour votre entreprise">
+  <meta name="description" content="Electric Waves - Groupe de pop-rock indie français depuis 2021">
   
   <!-- Google Fonts - Typography moderne -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,63 +38,16 @@
   
   <main>
     {{- if .IsHome -}}
-    <!-- Hero section avec background et animations -->
-    <section class="hero" id="hero">
-      <div class="hero-background">
-        <div class="hero-overlay"></div>
-      </div>
-      <div class="hero-content">
-        <div class="container">
-          <div class="hero-text animate-fade-up">
-            <h1 class="hero-title">
-              <span class="highlight">Transformez</span> votre présence digitale
-            </h1>
-            <p class="hero-subtitle">
-              Nous créons des solutions sur-mesure qui propulsent votre entreprise vers le succès. 
-              Innovation, qualité et performance au service de vos ambitions.
-            </p>
-            <div class="hero-buttons">
-              <a href="#contact" class="btn btn-primary btn-animated">
-                <span>Démarrer un projet</span>
-                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                  <path d="M5 12h14M12 5l7 7-7 7"/>
-                </svg>
-              </a>
-              <a href="#about" class="btn btn-outline">
-                <span>En savoir plus</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="hero-scroll-indicator">
-        <div class="scroll-mouse">
-          <div class="scroll-wheel"></div>
-        </div>
-        <span>Scroll</span>
-      </div>
-    </section>
+    <!-- Hero Section Musical -->
+    {{- partial "hero.html" . -}}
 
-    <!-- Sections du site -->
-    <section class="about" id="about">
-      {{- partial "about.html" . -}}
-    </section>
-    
-    <section class="services" id="services">
-      {{- partial "services.html" . -}}
-    </section>
-    
-    <section class="projects" id="projects">
-      {{- partial "projects.html" . -}}
-    </section>
-    
-    <section class="team" id="team">
-      {{- partial "team.html" . -}}
-    </section>
-    
-    <section class="contact" id="contact">
-      {{- partial "contact.html" . -}}
-    </section>
+    <!-- Sections du groupe -->
+    {{- partial "about.html" . -}}
+    {{- partial "projects.html" . -}}
+    {{- partial "concerts.html" . -}}
+    {{- partial "services.html" . -}}
+    {{- partial "team.html" . -}}
+    {{- partial "contact.html" . -}}
     {{- else -}}
     {{- block "main" . -}}{{- end -}}
     {{- end -}}
