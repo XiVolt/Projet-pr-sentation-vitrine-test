@@ -38,16 +38,16 @@
   --gray-900: #0f172a;
   
   /* Text Colors for Musical Theme */
-  --text-primary: var(--white);
-  --text-secondary: var(--gray-300);
-  --text-muted: var(--gray-400);
-  --text-neon: var(--accent);
-  --text-electric: var(--primary);
+  --text-primary: #ffffff;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --text-neon: #00e5ff;
+  --text-electric: #ff4081;
   
   /* Background Colors */
-  --bg-primary: var(--dark-bg);
-  --bg-secondary: var(--dark-surface);
-  --bg-card: var(--dark-card);
+  --bg-primary: #0a0a0f;
+  --bg-secondary: #1a1a2e;
+  --bg-card: #16213e;
   --bg-overlay: rgba(10, 10, 15, 0.9);
   
   /* Typography */
@@ -144,7 +144,7 @@ html {
 }
 
 body {
-  font-family: var(--font-primary);
+  font-family: var(--font-primary), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-weight: 400;
   color: var(--text-primary);
   background: var(--bg-primary);
@@ -164,12 +164,66 @@ body {
   
   /* Add top padding for fixed header */
   padding-top: 70px;
+  
+  /* Fallback colors */
+  color: #ffffff;
+  background: #0a0a0f;
 }
 
 @media (min-width: 768px) {
   body {
     padding-top: 80px;
   }
+}
+
+/* ===== SECTION BASE STYLES ===== */
+
+.section {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  position: relative;
+  z-index: 1;
+  
+  /* Fallback colors */
+  background: #0a0a0f;
+  color: #ffffff;
+}
+
+.container {
+  background: transparent;
+  color: inherit;
+}
+
+/* ===== CARD AND CONTENT STYLES ===== */
+
+.card, 
+.team-card, 
+.service-card, 
+.project-card, 
+.feature-card {
+  background: var(--bg-card);
+  color: var(--text-primary);
+  border: 1px solid rgba(255, 64, 129, 0.1);
+  position: relative;
+  z-index: 2;
+  
+  /* Fallback colors */
+  background: #16213e;
+  color: #ffffff;
+  border: 1px solid rgba(255, 64, 129, 0.1);
+}
+
+/* ===== TEXT CONTENT STYLES ===== */
+
+p, 
+.section-description,
+.member-description,
+.service-description,
+.about-text {
+  color: var(--text-secondary);
+  
+  /* Fallback color */
+  color: #cbd5e1;
 }
 
 /* ===== MUSICAL ANIMATIONS ===== */
@@ -202,7 +256,8 @@ body {
 
 /* ===== SCROLL PROGRESS BAR ===== */
 
-.scroll-progress {
+.scroll-progress,
+.scroll-progress-bar {
   position: fixed;
   top: 0;
   left: 0;
@@ -212,6 +267,10 @@ body {
   box-shadow: var(--shadow-neon);
   z-index: var(--z-toast);
   transition: width var(--transition-fast);
+  
+  /* Fallback */
+  background: linear-gradient(90deg, #ff4081, #00e5ff);
+  z-index: 1080;
 }
 
 /* ===== MOBILE-FIRST TYPOGRAPHY ===== */
@@ -1274,11 +1333,11 @@ a:hover {
 
 .grid {
   display: grid;
-  gap: var(--space-8);
+  gap: var(--space-6);
 }
 
 .grid-2 {
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
 .grid-3 {
@@ -1287,6 +1346,117 @@ a:hover {
 
 .grid-4 {
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+/* Mobile adjustments */
+@media (max-width: 767px) {
+  .grid {
+    gap: var(--space-4);
+  }
+  
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== SECTION VISIBILITY FIXES ===== */
+
+/* About Section */
+.about-section {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  position: relative;
+  z-index: 1;
+  
+  /* Fallbacks */
+  background: #0a0a0f;
+  color: #ffffff;
+}
+
+.about-content,
+.about-stats,
+.about-features {
+  background: transparent;
+  color: inherit;
+}
+
+/* Services Section */
+.services-section {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  position: relative;
+  z-index: 1;
+  
+  /* Fallbacks */
+  background: #0a0a0f;
+  color: #ffffff;
+}
+
+/* Projects Section */
+.projects-section {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  position: relative;
+  z-index: 1;
+  
+  /* Fallbacks */
+  background: #0a0a0f;
+  color: #ffffff;
+}
+
+/* Team Section */
+.team-section {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  position: relative;
+  z-index: 1;
+  
+  /* Fallbacks */
+  background: #0a0a0f;
+  color: #ffffff;
+}
+
+/* Contact Section */
+.contact-section {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  position: relative;
+  z-index: 1;
+  
+  /* Fallbacks */
+  background: #0a0a0f;
+  color: #ffffff;
+}
+
+/* Concerts Section */
+.concerts-section {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  position: relative;
+  z-index: 1;
+  
+  /* Fallbacks */
+  background: #0a0a0f;
+  color: #ffffff;
+}
+
+/* All sections */
+section[id] {
+  background: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+  
+  /* Fallbacks */
+  background: #0a0a0f !important;
+  color: #ffffff !important;
+}
+
+/* Content containers */
+.section-header,
+.section-content,
+.container > * {
+  color: inherit;
 }
 
 /* ===== FOOTER ===== */
