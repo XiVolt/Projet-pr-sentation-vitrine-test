@@ -62,9 +62,13 @@ section:not(:last-child) {
 }
 
 /* Palette principale */
+/* Palette vive et chaleureuse */
 :root {
-  --main-color: #2563eb;
-  --main-color-light: #3b82f6;
+  --main-color: #00b894;
+  --main-color-light: #55efc4;
+  --accent-orange: #fdcb6e;
+  --accent-blue: #0984e3;
+  --accent-violet: #a29bfe;
   --bg: #f9f9f9;
   --text: #222;
   --gray: #e5e7eb;
@@ -72,11 +76,11 @@ section:not(:last-child) {
 }
 
 body {
-  font-family: 'Segoe UI', Arial, sans-serif;
+  font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 /* Header fixe et responsive */
@@ -169,19 +173,29 @@ main {
 }
 .btn {
   display: inline-block;
-  padding: 0.75rem 2rem;
-  border-radius: 2rem;
-  background: var(--main-color);
+  padding: 0.85rem 2.2rem;
+  border-radius: 2.5rem;
+  background: linear-gradient(90deg, var(--main-color) 60%, var(--accent-orange) 100%);
   color: var(--white);
   text-decoration: none;
   font-weight: 600;
-  font-size: 1rem;
-  box-shadow: 0 2px 8px rgba(37,99,235,0.08);
-  transition: background 0.2s, transform 0.2s;
+  font-size: 1.08rem;
+  box-shadow: 0 2px 12px rgba(0,184,148,0.10);
+  letter-spacing: 0.5px;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
 }
 .btn:hover {
-  background: var(--main-color-light);
-  transform: translateY(-2px) scale(1.04);
+  background: linear-gradient(90deg, var(--accent-orange) 0%, var(--main-color) 100%);
+  transform: translateY(-2px) scale(1.06);
+  box-shadow: 0 6px 24px rgba(0,184,148,0.18);
+}
+
+/* Séparateurs SVG ondulés */
+.svg-separator {
+  display: block;
+  width: 100%;
+  line-height: 0;
+  margin: 0;
 }
 
 /* About section */
