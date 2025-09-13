@@ -1,0 +1,262 @@
+{{ define "main" }}
+<div class="page-hero">
+  <div class="hero-content-page">
+    <h1>{{ .Title }}</h1>
+    <p class="hero-subtitle">Découvrez nos réalisations et les histoires de succès de nos clients</p>
+  </div>
+</div>
+
+<section class="page-content">
+  <div class="container-large">
+    
+    <!-- Filtre projets -->
+    <div class="projects-filter">
+      <button class="filter-btn active" data-filter="all">Tous les projets</button>
+      <button class="filter-btn" data-filter="web">Sites Web</button>
+      <button class="filter-btn" data-filter="mobile">Applications</button>
+      <button class="filter-btn" data-filter="ecommerce">E-commerce</button>
+      <button class="filter-btn" data-filter="corporate">Corporate</button>
+    </div>
+
+    <!-- Grille de projets -->
+    <div class="projects-showcase">
+      
+      <!-- Projet 1 -->
+      <div class="project-card-large" data-category="ecommerce">
+        <div class="project-image">
+          <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=80" alt="FreshMarket E-commerce">
+          <div class="project-overlay">
+            <div class="project-links">
+              <a href="#" class="project-link">Voir le projet</a>
+              <a href="#" class="project-demo">Démo live</a>
+            </div>
+          </div>
+        </div>
+        <div class="project-content">
+          <div class="project-tags">
+            <span class="project-tag">E-commerce</span>
+            <span class="project-tag">React</span>
+            <span class="project-tag">Node.js</span>
+          </div>
+          <h3>FreshMarket - Plateforme E-commerce</h3>
+          <p>Plateforme de vente en ligne moderne avec gestion des stocks en temps réel, paiements sécurisés et interface d'administration complète.</p>
+          <div class="project-metrics">
+            <div class="metric">
+              <span class="metric-value">+150%</span>
+              <span class="metric-label">Conversion</span>
+            </div>
+            <div class="metric">
+              <span class="metric-value">50k+</span>
+              <span class="metric-label">Utilisateurs</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Projet 2 -->
+      <div class="project-card-large" data-category="mobile">
+        <div class="project-image">
+          <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&q=80" alt="FitTracker App">
+          <div class="project-overlay">
+            <div class="project-links">
+              <a href="#" class="project-link">Voir le projet</a>
+              <a href="#" class="project-demo">App Store</a>
+            </div>
+          </div>
+        </div>
+        <div class="project-content">
+          <div class="project-tags">
+            <span class="project-tag">Mobile</span>
+            <span class="project-tag">React Native</span>
+            <span class="project-tag">HealthKit</span>
+          </div>
+          <h3>FitTracker - Application Fitness</h3>
+          <p>Application mobile de suivi fitness avec synchronisation wearables, programmes personnalisés et communauté sociale intégrée.</p>
+          <div class="project-metrics">
+            <div class="metric">
+              <span class="metric-value">4.8⭐</span>
+              <span class="metric-label">App Store</span>
+            </div>
+            <div class="metric">
+              <span class="metric-value">25k+</span>
+              <span class="metric-label">Downloads</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Projet 3 -->
+      <div class="project-card-large" data-category="web corporate">
+        <div class="project-image">
+          <img src="https://images.unsplash.com/photo-1486312338219-ce68e2c6b696?auto=format&fit=crop&w=800&q=80" alt="TechCorp Website">
+          <div class="project-overlay">
+            <div class="project-links">
+              <a href="#" class="project-link">Voir le projet</a>
+              <a href="#" class="project-demo">Site live</a>
+            </div>
+          </div>
+        </div>
+        <div class="project-content">
+          <div class="project-tags">
+            <span class="project-tag">Corporate</span>
+            <span class="project-tag">Vue.js</span>
+            <span class="project-tag">Headless CMS</span>
+          </div>
+          <h3>TechCorp - Site Corporate</h3>
+          <p>Refonte complète du site corporate avec CMS headless, animations interactives et optimisation SEO avancée pour une multinationale tech.</p>
+          <div class="project-metrics">
+            <div class="metric">
+              <span class="metric-value">+200%</span>
+              <span class="metric-label">Trafic SEO</span>
+            </div>
+            <div class="metric">
+              <span class="metric-value">98</span>
+              <span class="metric-label">PageSpeed</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Projet 4 -->
+      <div class="project-card-large" data-category="web">
+        <div class="project-image">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="StartupHub Platform">
+          <div class="project-overlay">
+            <div class="project-links">
+              <a href="#" class="project-link">Voir le projet</a>
+              <a href="#" class="project-demo">Démo live</a>
+            </div>
+          </div>
+        </div>
+        <div class="project-content">
+          <div class="project-tags">
+            <span class="project-tag">SaaS</span>
+            <span class="project-tag">Next.js</span>
+            <span class="project-tag">AI/ML</span>
+          </div>
+          <h3>StartupHub - Plateforme SaaS</h3>
+          <p>Plateforme collaborative pour startups avec matching automatique par IA, gestion de projets intégrée et analytics avancés.</p>
+          <div class="project-metrics">
+            <div class="metric">
+              <span class="metric-value">500+</span>
+              <span class="metric-label">Entreprises</span>
+            </div>
+            <div class="metric">
+              <span class="metric-value">99.9%</span>
+              <span class="metric-label">Uptime</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Projet 5 -->
+      <div class="project-card-large" data-category="ecommerce mobile">
+        <div class="project-image">
+          <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=800&q=80" alt="Luxe Fashion App">
+          <div class="project-overlay">
+            <div class="project-links">
+              <a href="#" class="project-link">Voir le projet</a>
+              <a href="#" class="project-demo">App Store</a>
+            </div>
+          </div>
+        </div>
+        <div class="project-content">
+          <div class="project-tags">
+            <span class="project-tag">Fashion</span>
+            <span class="project-tag">AR/VR</span>
+            <span class="project-tag">Flutter</span>
+          </div>
+          <h3>Luxe Fashion - App E-commerce</h3>
+          <p>Application e-commerce haut de gamme avec essayage virtuel AR, personnalisation IA et expérience d'achat premium.</p>
+          <div class="project-metrics">
+            <div class="metric">
+              <span class="metric-value">+300%</span>
+              <span class="metric-label">Engagement</span>
+            </div>
+            <div class="metric">
+              <span class="metric-value">€2M+</span>
+              <span class="metric-label">GMV</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Projet 6 -->
+      <div class="project-card-large" data-category="web corporate">
+        <div class="project-image">
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="DataViz Dashboard">
+          <div class="project-overlay">
+            <div class="project-links">
+              <a href="#" class="project-link">Voir le projet</a>
+              <a href="#" class="project-demo">Démo live</a>
+            </div>
+          </div>
+        </div>
+        <div class="project-content">
+          <div class="project-tags">
+            <span class="project-tag">Analytics</span>
+            <span class="project-tag">D3.js</span>
+            <span class="project-tag">Python</span>
+          </div>
+          <h3>DataViz - Dashboard Analytics</h3>
+          <p>Tableau de bord analytics temps réel avec visualisations interactives personnalisées et intelligence artificielle prédictive.</p>
+          <div class="project-metrics">
+            <div class="metric">
+              <span class="metric-value">1M+</span>
+              <span class="metric-label">Data Points</span>
+            </div>
+            <div class="metric">
+              <span class="metric-value">95%</span>
+              <span class="metric-label">Précision IA</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Processus projet -->
+    <div class="project-process">
+      <h2>Comment nous menons vos projets</h2>
+      <div class="process-detailed">
+        <div class="process-item">
+          <div class="process-icon">🎯</div>
+          <div class="process-text">
+            <h3>Brief & Analyse</h3>
+            <p>Analyse approfondie de vos besoins, audit technique et définition des objectifs mesurables</p>
+          </div>
+        </div>
+        <div class="process-item">
+          <div class="process-icon">🎨</div>
+          <div class="process-text">
+            <h3>Design & Prototypage</h3>
+            <p>Conception UX/UI, prototypes interactifs et validation utilisateur avant développement</p>
+          </div>
+        </div>
+        <div class="process-item">
+          <div class="process-icon">⚡</div>
+          <div class="process-text">
+            <h3>Développement Agile</h3>
+            <p>Développement itératif avec livraisons fréquentes et feedback continu</p>
+          </div>
+        </div>
+        <div class="process-item">
+          <div class="process-icon">🚀</div>
+          <div class="process-text">
+            <h3>Launch & Optimisation</h3>
+            <p>Déploiement sécurisé, monitoring performance et optimisations continues</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="page-cta">
+      <h2>Votre prochain projet ?</h2>
+      <p>Partagez-nous votre vision et découvrons ensemble comment la concrétiser avec excellence.</p>
+      <a href="/contact" class="btn btn-primary">Démarrer un projet</a>
+    </div>
+
+  </div>
+</section>
+{{ end }}

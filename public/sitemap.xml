@@ -2,9 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1314/about/</loc>
+  </url><url>
     <loc>http://localhost:1314/</loc>
   </url><url>
     <loc>http://localhost:1314/categories/</loc>
+  </url><url>
+    <loc>http://localhost:1314/contact/</loc>
+  </url><url>
+    <loc>http://localhost:1314/projects/</loc>
+  </url><url>
+    <loc>http://localhost:1314/services/</loc>
   </url><url>
     <loc>http://localhost:1314/tags/</loc>
   </url>

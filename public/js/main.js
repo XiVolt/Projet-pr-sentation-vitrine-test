@@ -282,10 +282,154 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // ===============================================
+    // PROJECT FILTERING
+    // ===============================================
+    function initProjectFilters() {
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card-large');
+
+        if (!filterButtons.length || !projectCards.length) return;
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Update active button
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                const filter = button.getAttribute('data-filter');
+
+                // Filter projects with animation
+                projectCards.forEach(card => {
+                    const categories = card.getAttribute('data-category').split(' ');
+                    const shouldShow = filter === 'all' || categories.includes(filter);
+
+                    if (shouldShow) {
+                        card.style.display = 'block';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, 10);
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+    }
+
+    // ===============================================
+    // CONTACT FORM
+    // ===============================================
+    function initContactForm() {
+        const form = document.getElementById('contactForm');
+        if (!form) return;
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const btnText = submitBtn.querySelector('.btn-text');
+            const btnLoading = submitBtn.querySelector('.btn-loading');
+            
+            // Show loading state
+            btnText.style.display = 'none';
+            btnLoading.style.display = 'inline';
+            submitBtn.disabled = true;
+
+            // Simulate form submission (replace with actual endpoint)
+            try {
+                await new Promise(resolve => setTimeout(resolve, 2000));
+                
+                // Show success message
+                showNotification('Votre message a été envoyé avec succès !', 'success');
+                form.reset();
+                
+            } catch (error) {
+                showNotification('Une erreur s\'est produite. Veuillez réessayer.', 'error');
+            } finally {
+                // Reset button state
+                btnText.style.display = 'inline';
+                btnLoading.style.display = 'none';
+                submitBtn.disabled = false;
+            }
+        });
+    }
+
+    // ===============================================
+    // NOTIFICATION SYSTEM
+    // ===============================================
+    function showNotification(message, type = 'success') {
+        const notification = document.createElement('div');
+        notification.className = `notification notification-${type}`;
+        notification.innerHTML = `
+            <div class="notification-content">
+                <span class="notification-icon">${type === 'success' ? '✅' : '❌'}</span>
+                <span class="notification-message">${message}</span>
+                <button class="notification-close">×</button>
+            </div>
+        `;
+
+        // Style the notification
+        Object.assign(notification.style, {
+            position: 'fixed',
+            top: '20px',
+            right: '20px',
+            background: type === 'success' ? '#10b981' : '#ef4444',
+            color: 'white',
+            padding: '1rem 1.5rem',
+            borderRadius: '8px',
+            boxShadow: '0 10px 25px rgba(0,0,0,0.1)',
+            zIndex: '10000',
+            transform: 'translateX(400px)',
+            transition: 'transform 0.3s ease',
+            maxWidth: '400px'
+        });
+
+        document.body.appendChild(notification);
+
+        // Animate in
+        setTimeout(() => {
+            notification.style.transform = 'translateX(0)';
+        }, 10);
+
+        // Auto remove after 5 seconds
+        const timeoutId = setTimeout(() => {
+            removeNotification(notification);
+        }, 5000);
+
+        // Manual close
+        const closeBtn = notification.querySelector('.notification-close');
+        closeBtn.addEventListener('click', () => {
+            clearTimeout(timeoutId);
+            removeNotification(notification);
+        });
+    }
+
+    function removeNotification(notification) {
+        notification.style.transform = 'translateX(400px)';
+        setTimeout(() => {
+            if (notification.parentNode) {
+                notification.parentNode.removeChild(notification);
+            }
+        }, 300);
+    }
+
+    // ===============================================
+    // CHAT WIDGET (PLACEHOLDER)
+    // ===============================================
+    window.openChat = function() {
+        showNotification('Chat en direct sera bientôt disponible !', 'success');
+    };
+
+    // ===============================================
     // INITIALISATION DE TOUTES LES FONCTIONS
     // ===============================================
     try {
-        initPreloader();
+        // initPreloader(); // Désactivé pour améliorer l'UX
         initDarkMode();
         initScrollProgressBar();
         initActiveMenu();
@@ -294,7 +438,12 @@ document.addEventListener('DOMContentLoaded', function() {
         initRippleEffect();
         initMobileMenu();
         initSmoothScroll();
-        initSimpleParticles();
+        // Particules seulement sur la homepage
+        if (document.getElementById('particleCanvas')) {
+            initSimpleParticles();
+        }
+        initProjectFilters();
+        initContactForm();
         
         console.log('Toutes les fonctions JavaScript sont initialisées');
     } catch (error) {

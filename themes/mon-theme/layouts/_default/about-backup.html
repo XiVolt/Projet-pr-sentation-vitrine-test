@@ -1,0 +1,135 @@
+{{ define "main" }}
+<div class="page-hero">
+  <div class="hero-content-page">
+    <h1>{{ .Title }}</h1>
+    <p class="hero-subtitle">Découvrez notre histoire, nos valeurs et notre équipe passionnée</p>
+  </div>
+</div>
+
+<section class="page-content">
+  <div class="container-large">
+    
+    <!-- Notre histoire -->
+    <div class="story-section">
+      <div class="story-grid">
+        <div class="story-text">
+          <h2>Notre histoire</h2>
+          <p>Tout a commencé en 2018 avec une vision simple : créer des solutions digitales qui ont du sens. Depuis, nous avons accompagné plus de 200 projets, de la startup naissante à l'entreprise établie.</p>
+          <p>Notre approche se base sur trois piliers : l'écoute, l'innovation et la durabilité. Chaque projet est unique et mérite une attention particulière.</p>
+          <div class="stats-row">
+            <div class="stat">
+              <div class="stat-number">200+</div>
+              <div class="stat-label">Projets réalisés</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">50+</div>
+              <div class="stat-label">Clients satisfaits</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">6</div>
+              <div class="stat-label">Années d'expérience</div>
+            </div>
+          </div>
+        </div>
+        <div class="story-image">
+          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=600&q=80" alt="Notre équipe au travail">
+        </div>
+      </div>
+    </div>
+
+    <!-- Nos valeurs -->
+    <div class="values-section">
+      <h2>Nos valeurs</h2>
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-icon">🎯</div>
+          <h3>Excellence</h3>
+          <p>Nous visons l'excellence dans chaque projet, sans compromis sur la qualité.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">🤝</div>
+          <h3>Collaboration</h3>
+          <p>Nous travaillons main dans la main avec nos clients pour co-créer les meilleures solutions.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">🌱</div>
+          <h3>Durabilité</h3>
+          <p>Nos solutions sont pensées pour durer et avoir un impact positif à long terme.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">🚀</div>
+          <h3>Innovation</h3>
+          <p>Nous restons à la pointe des technologies pour offrir des solutions modernes.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Notre équipe -->
+    <div class="team-full-section">
+      <h2>Rencontrez notre équipe</h2>
+      <div class="team-full-grid">
+        <div class="team-member-full">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Alex Martin">
+          <div class="member-info">
+            <h3>Alex Martin</h3>
+            <p class="member-role">Directeur & Fondateur</p>
+            <p class="member-bio">Passionné par l'entrepreneuriat et l'innovation, Alex guide la vision stratégique de l'entreprise. Il accompagne personnellement nos clients les plus importants.</p>
+            <div class="member-skills">
+              <span class="skill">Stratégie</span>
+              <span class="skill">Leadership</span>
+              <span class="skill">Innovation</span>
+            </div>
+          </div>
+        </div>
+        <div class="team-member-full">
+          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sophie Dubois">
+          <div class="member-info">
+            <h3>Sophie Dubois</h3>
+            <p class="member-role">Responsable Projets</p>
+            <p class="member-bio">Sophie orchestre nos projets avec précision et bienveillance. Sa capacité à fédérer les équipes fait d'elle un pilier de notre organisation.</p>
+            <div class="member-skills">
+              <span class="skill">Gestion de projet</span>
+              <span class="skill">Communication</span>
+              <span class="skill">Agilité</span>
+            </div>
+          </div>
+        </div>
+        <div class="team-member-full">
+          <img src="https://randomuser.me/api/portraits/men/77.jpg" alt="Mehdi Leroy">
+          <div class="member-info">
+            <h3>Mehdi Leroy</h3>
+            <p class="member-role">Lead Developer</p>
+            <p class="member-bio">Architecte technique de nos solutions, Mehdi transforme les idées les plus ambitieuses en réalité. Il maîtrise les technologies les plus avancées.</p>
+            <div class="member-skills">
+              <span class="skill">React</span>
+              <span class="skill">Node.js</span>
+              <span class="skill">Cloud</span>
+            </div>
+          </div>
+        </div>
+        <div class="team-member-full">
+          <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Julie Bernard">
+          <div class="member-info">
+            <h3>Julie Bernard</h3>
+            <p class="member-role">UX/UI Designer</p>
+            <p class="member-bio">Julie donne vie à nos interfaces avec créativité et pragmatisme. Son approche centrée utilisateur garantit des expériences exceptionnelles.</p>
+            <div class="member-skills">
+              <span class="skill">UI Design</span>
+              <span class="skill">UX Research</span>
+              <span class="skill">Figma</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="page-cta">
+      <h2>Prêt à travailler avec nous ?</h2>
+      <p>Discutons de votre projet et voyons comment nous pouvons vous aider à le réaliser.</p>
+      <a href="/contact" class="btn btn-primary">Démarrer un projet</a>
+    </div>
+
+  </div>
+</section>
+{{ end }}

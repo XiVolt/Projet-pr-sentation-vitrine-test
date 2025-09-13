@@ -1,0 +1,193 @@
+{{ define "main" }}
+<div class="page-hero">
+  <div class="hero-content-page">
+    <h1>{{ .Title }}</h1>
+    <p class="hero-subtitle">Démarrons votre projet ensemble - Échangeons sur vos besoins</p>
+  </div>
+</div>
+
+<section class="page-content">
+  <div class="container-large">
+    
+    <!-- Contact principal -->
+    <div class="contact-main">
+      <div class="contact-content">
+        <h2>Parlons de votre projet</h2>
+        <p>Que vous ayez un projet précis en tête ou simplement une idée à explorer, nous sommes là pour vous accompagner. Chaque conversation commence par une écoute attentive de vos besoins.</p>
+        
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-icon">📧</div>
+            <div class="contact-details">
+              <h3>Email</h3>
+              <p>contact@monsite.com</p>
+              <span>Réponse sous 24h</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📞</div>
+            <div class="contact-details">
+              <h3>Téléphone</h3>
+              <p>+33 1 23 45 67 89</p>
+              <span>Lun-Ven 9h-18h</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div class="contact-details">
+              <h3>Bureaux</h3>
+              <p>123 Avenue de l'Innovation<br>75001 Paris</p>
+              <span>Rendez-vous sur demande</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form-wrapper">
+        <form class="contact-form" id="contactForm">
+          <div class="form-group">
+            <label for="name">Nom complet *</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="company">Entreprise</label>
+            <input type="text" id="company" name="company">
+          </div>
+          
+          <div class="form-group">
+            <label for="phone">Téléphone</label>
+            <input type="tel" id="phone" name="phone">
+          </div>
+          
+          <div class="form-group">
+            <label for="project-type">Type de projet *</label>
+            <select id="project-type" name="project-type" required>
+              <option value="">Sélectionnez un type</option>
+              <option value="site-vitrine">Site vitrine</option>
+              <option value="e-commerce">E-commerce</option>
+              <option value="application-web">Application web</option>
+              <option value="application-mobile">Application mobile</option>
+              <option value="refonte">Refonte existante</option>
+              <option value="maintenance">Maintenance/Support</option>
+              <option value="autre">Autre</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="budget">Budget estimé</label>
+            <select id="budget" name="budget">
+              <option value="">Non défini</option>
+              <option value="moins-5k">Moins de 5 000€</option>
+              <option value="5k-15k">5 000€ - 15 000€</option>
+              <option value="15k-50k">15 000€ - 50 000€</option>
+              <option value="50k-plus">50 000€ et plus</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="timeline">Délai souhaité</label>
+            <select id="timeline" name="timeline">
+              <option value="">Pas de contrainte</option>
+              <option value="urgent">Urgent (moins de 1 mois)</option>
+              <option value="court">Court terme (1-3 mois)</option>
+              <option value="moyen">Moyen terme (3-6 mois)</option>
+              <option value="long">Long terme (6+ mois)</option>
+            </select>
+          </div>
+          
+          <div class="form-group full-width">
+            <label for="message">Décrivez votre projet *</label>
+            <textarea id="message" name="message" rows="6" placeholder="Parlez-nous de votre projet, vos objectifs, votre audience cible..." required></textarea>
+          </div>
+          
+          <div class="form-group checkbox-group full-width">
+            <label class="checkbox-label">
+              <input type="checkbox" name="newsletter" id="newsletter">
+              <span class="checkmark"></span>
+              J'accepte de recevoir des actualités et conseils par email
+            </label>
+          </div>
+          
+          <div class="form-group checkbox-group full-width">
+            <label class="checkbox-label">
+              <input type="checkbox" name="privacy" id="privacy" required>
+              <span class="checkmark"></span>
+              J'accepte la <a href="/privacy" target="_blank">politique de confidentialité</a> *
+            </label>
+          </div>
+          
+          <div class="form-group full-width form-submit">
+            <button type="submit" class="btn btn-primary btn-submit">
+              <span class="btn-text">Envoyer ma demande</span>
+              <span class="btn-loading">Envoi en cours...</span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- FAQ Contact -->
+    <div class="contact-faq">
+      <h2>Questions fréquentes</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h3>Quel est votre processus de travail ?</h3>
+          <p>Nous commençons toujours par un audit gratuit de vos besoins, suivi d'une proposition détaillée. Le développement se fait en mode agile avec des points réguliers.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Proposez-vous des devis gratuits ?</h3>
+          <p>Oui, tous nos devis sont gratuits et sans engagement. Nous prenons le temps d'analyser votre projet pour vous proposer une solution adaptée.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Quels sont vos délais moyens ?</h3>
+          <p>Cela dépend de la complexité du projet. Un site vitrine prend 2-4 semaines, une application web 2-6 mois. Nous nous adaptons à vos contraintes.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Assurez-vous la maintenance ?</h3>
+          <p>Oui, nous proposons des contrats de maintenance adaptés à chaque projet : mises à jour, sécurité, hébergement et support technique.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Travaillez-vous avec tous les budgets ?</h3>
+          <p>Nous nous adaptons à différents budgets en proposant des solutions modulaires. L'important est de créer de la valeur pour votre activité.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Puis-je voir des exemples de votre travail ?</h3>
+          <p>Bien sûr ! Consultez notre <a href="/projects">portfolio</a> et nous pouvons vous présenter des projets similaires au vôtre lors de notre première rencontre.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Alternatives de contact -->
+    <div class="contact-alternatives">
+      <h2>Autres moyens de nous joindre</h2>
+      <div class="alternatives-grid">
+        <div class="alternative-item">
+          <div class="alternative-icon">💬</div>
+          <h3>Chat en direct</h3>
+          <p>Discutez avec notre équipe en temps réel</p>
+          <button class="btn btn-secondary" onclick="openChat()">Démarrer le chat</button>
+        </div>
+        <div class="alternative-item">
+          <div class="alternative-icon">📅</div>
+          <h3>Rendez-vous vidéo</h3>
+          <p>Planifiez un call de 30 minutes gratuit</p>
+          <a href="#" class="btn btn-secondary">Réserver un créneau</a>
+        </div>
+        <div class="alternative-item">
+          <div class="alternative-icon">📱</div>
+          <h3>WhatsApp Business</h3>
+          <p>Contactez-nous directement</p>
+          <a href="https://wa.me/33123456789" class="btn btn-secondary" target="_blank">Ouvrir WhatsApp</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+{{ end }}
