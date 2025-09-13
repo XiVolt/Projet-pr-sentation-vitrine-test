@@ -1,4 +1,4 @@
-/* ===== MODERN INTERACTIVE JAVASCRIPT ===== */
+/* ===== ELECTRIC WAVES - MODERN INTERACTIVE JAVASCRIPT ===== */
 
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
@@ -8,7 +8,9 @@ document.addEventListener('DOMContentLoaded', function() {
         scrollOffset: 100,
         animationDelay: 100,
         particleCount: 50,
-        scrollProgressThrottle: 10
+        scrollProgressThrottle: 10,
+        // Electric Waves concert date
+        concertDate: new Date('2025-11-22T20:00:00').getTime()
     };
 
     // ===== UTILITY FUNCTIONS ===== //
@@ -41,11 +43,155 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     }
 
+    // ===== ELECTRIC WAVES COUNTDOWN TIMER ===== //
+    
+    class CountdownTimer {
+        constructor() {
+            this.targetDate = config.concertDate;
+            this.daysElement = document.getElementById('days');
+            this.hoursElement = document.getElementById('hours');
+            this.minutesElement = document.getElementById('minutes');
+            this.secondsElement = document.getElementById('seconds');
+            
+            if (this.daysElement && this.hoursElement && this.minutesElement && this.secondsElement) {
+                this.init();
+            }
+        }
+
+        init() {
+            this.updateCountdown();
+            // Update every second
+            this.interval = setInterval(() => this.updateCountdown(), 1000);
+        }
+
+        updateCountdown() {
+            const now = new Date().getTime();
+            const difference = this.targetDate - now;
+
+            if (difference > 0) {
+                const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+                // Animate number changes
+                this.animateNumber(this.daysElement, days);
+                this.animateNumber(this.hoursElement, hours);
+                this.animateNumber(this.minutesElement, minutes);
+                this.animateNumber(this.secondsElement, seconds);
+            } else {
+                // Concert has started!
+                this.daysElement.textContent = '00';
+                this.hoursElement.textContent = '00';
+                this.minutesElement.textContent = '00';
+                this.secondsElement.textContent = '00';
+                
+                // Add some celebration animation
+                document.querySelectorAll('.time-unit').forEach(unit => {
+                    unit.classList.add('celebration');
+                });
+                
+                clearInterval(this.interval);
+            }
+        }
+
+        animateNumber(element, newValue) {
+            const currentValue = parseInt(element.textContent);
+            const formattedValue = newValue.toString().padStart(2, '0');
+            
+            if (currentValue !== newValue) {
+                element.style.transform = 'scale(1.1)';
+                element.style.color = 'var(--text-neon)';
+                
+                setTimeout(() => {
+                    element.textContent = formattedValue;
+                    element.style.transform = 'scale(1)';
+                    element.style.color = '';
+                }, 150);
+            }
+        }
+
+        destroy() {
+            if (this.interval) {
+                clearInterval(this.interval);
+            }
+        }
+    }
+
+    // ===== MOBILE MENU HANDLER ===== //
+    
+    class MobileMenu {
+        constructor() {
+            this.toggle = document.getElementById('navToggle');
+            this.menu = document.getElementById('navMenu');
+            this.links = this.menu ? this.menu.querySelectorAll('.nav-link') : [];
+            this.init();
+        }
+
+        init() {
+            if (this.toggle && this.menu) {
+                this.toggle.addEventListener('click', () => this.toggleMenu());
+                
+                // Close menu when clicking on a link
+                this.links.forEach(link => {
+                    link.addEventListener('click', () => this.closeMenu());
+                });
+
+                // Close menu when clicking outside
+                document.addEventListener('click', (e) => {
+                    if (!this.toggle.contains(e.target) && !this.menu.contains(e.target)) {
+                        this.closeMenu();
+                    }
+                });
+
+                // Close menu on escape key
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape') {
+                        this.closeMenu();
+                    }
+                });
+            }
+        }
+
+        toggleMenu() {
+            const isOpen = this.menu.classList.contains('active');
+            if (isOpen) {
+                this.closeMenu();
+            } else {
+                this.openMenu();
+            }
+        }
+
+        openMenu() {
+            this.menu.classList.add('active');
+            this.toggle.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            
+            // Animate hamburger lines
+            const lines = this.toggle.querySelectorAll('.hamburger-line');
+            lines[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+            lines[1].style.opacity = '0';
+            lines[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+        }
+
+        closeMenu() {
+            this.menu.classList.remove('active');
+            this.toggle.classList.remove('active');
+            document.body.style.overflow = '';
+            
+            // Reset hamburger lines
+            const lines = this.toggle.querySelectorAll('.hamburger-line');
+            lines[0].style.transform = '';
+            lines[1].style.opacity = '1';
+            lines[2].style.transform = '';
+        }
+    }
+
     // ===== THEME MANAGEMENT ===== //
     
     class ThemeManager {
         constructor() {
-            this.currentTheme = localStorage.getItem('theme') || 'light';
+            this.currentTheme = localStorage.getItem('theme') || 'dark'; // Default to dark for Electric Waves
             this.toggle = document.getElementById('themeToggle');
             this.init();
         }
@@ -76,11 +222,41 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    // ===== SMOOTH SCROLLING ===== //
+    
+    class SmoothScroll {
+        constructor() {
+            this.init();
+        }
+
+        init() {
+            // Handle anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    const targetId = link.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        e.preventDefault();
+                        
+                        const headerHeight = document.querySelector('.site-header')?.offsetHeight || 0;
+                        const targetPosition = targetElement.offsetTop - headerHeight - 20;
+                        
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        }
+    }
+
     // ===== SCROLL PROGRESS BAR ===== //
     
     class ScrollProgress {
         constructor() {
-            this.progressBar = document.querySelector('.scroll-progress');
+            this.progressBar = document.querySelector('.scroll-progress-bar');
             if (!this.progressBar) {
                 this.createProgressBar();
             }
@@ -89,7 +265,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
         createProgressBar() {
             this.progressBar = document.createElement('div');
-            this.progressBar.className = 'scroll-progress';
+            this.progressBar.className = 'scroll-progress-bar';
+            this.progressBar.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 0%;
+                height: 3px;
+                background: linear-gradient(90deg, var(--primary), var(--accent));
+                z-index: 9999;
+                transition: width 0.3s ease;
+            `;
             document.body.appendChild(this.progressBar);
         }
 
@@ -601,20 +787,126 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    // ===== ACCESSIBILITY ENHANCEMENTS ===== //
+    
+    class AccessibilityEnhancements {
+        constructor() {
+            this.init();
+        }
+
+        init() {
+            // Skip to main content link
+            this.addSkipLink();
+            
+            // Focus management
+            this.manageFocus();
+            
+            // Keyboard navigation
+            this.enhanceKeyboardNavigation();
+        }
+
+        addSkipLink() {
+            if (document.querySelector('.skip-link')) return; // Already exists
+            
+            const skipLink = document.createElement('a');
+            skipLink.href = '#main';
+            skipLink.className = 'skip-link';
+            skipLink.textContent = 'Aller au contenu principal';
+            skipLink.style.cssText = `
+                position: absolute;
+                top: -40px;
+                left: 6px;
+                background: var(--primary);
+                color: white;
+                padding: 8px;
+                text-decoration: none;
+                border-radius: 4px;
+                z-index: 1000;
+                transition: top 0.3s;
+            `;
+            
+            skipLink.addEventListener('focus', () => {
+                skipLink.style.top = '6px';
+            });
+            
+            skipLink.addEventListener('blur', () => {
+                skipLink.style.top = '-40px';
+            });
+            
+            document.body.insertBefore(skipLink, document.body.firstChild);
+        }
+
+        manageFocus() {
+            // Ensure focus is visible
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Tab') {
+                    document.body.classList.add('keyboard-nav');
+                }
+            });
+
+            document.addEventListener('mousedown', () => {
+                document.body.classList.remove('keyboard-nav');
+            });
+        }
+
+        enhanceKeyboardNavigation() {
+            // Escape key to close modals/menus
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    // Close mobile menu if open
+                    const mobileMenu = document.querySelector('.nav-menu.active');
+                    if (mobileMenu) {
+                        document.getElementById('navToggle')?.click();
+                    }
+                }
+            });
+        }
+    }
+
     // ===== INITIALIZATION ===== //
     
     // Initialize all components
-    const themeManager = new ThemeManager();
-    const scrollProgress = new ScrollProgress();
-    const stickyHeader = new StickyHeader();
-    const smoothScroll = new SmoothScroll();
-    const scrollAnimations = new ScrollAnimations();
-    const heroParticles = new HeroParticles();
-    const backToTop = new BackToTop();
-    const mobileMenu = new MobileMenu();
-    const formEnhancements = new FormEnhancements();
-    const performanceOptimizer = new PerformanceOptimizer();
+    const countdownTimer = new CountdownTimer();  // Electric Waves countdown
+    const mobileMenu = new MobileMenu();          // Mobile navigation
+    const themeManager = new ThemeManager();      // Theme switching
+    const scrollProgress = new ScrollProgress();  // Scroll progress bar
+    const smoothScroll = new SmoothScroll();      // Smooth scrolling
     const accessibilityEnhancements = new AccessibilityEnhancements();
+
+    // ===== RESPONSIVE PERFORMANCE OPTIMIZATIONS ===== //
+    
+    // Optimize for mobile devices
+    if (window.innerWidth <= 768) {
+        // Reduce animations on mobile for better performance
+        document.documentElement.style.setProperty('--transition-fast', '100ms');
+        document.documentElement.style.setProperty('--transition', '200ms');
+        document.documentElement.style.setProperty('--transition-slow', '300ms');
+    }
+
+    // Handle orientation changes
+    window.addEventListener('orientationchange', debounce(() => {
+        // Recalculate layout after orientation change
+        setTimeout(() => {
+            window.dispatchEvent(new Event('resize'));
+        }, 100);
+    }, 300));
+
+    // Handle resize events for responsive behavior
+    window.addEventListener('resize', debounce(() => {
+        // Adjust countdown timer for different screen sizes
+        if (countdownTimer) {
+            const countdownElement = document.querySelector('.countdown-timer');
+            if (countdownElement) {
+                if (window.innerWidth <= 480) {
+                    countdownElement.style.gap = 'var(--space-2)';
+                } else if (window.innerWidth <= 768) {
+                    countdownElement.style.gap = 'var(--space-4)';
+                } else {
+                    countdownElement.style.gap = 'var(--space-6)';
+                }
+            }
+        }
+    }, 250));
 
     // ===== GLOBAL ERROR HANDLING ===== //
     
@@ -623,50 +915,34 @@ document.addEventListener('DOMContentLoaded', function() {
         // In production, you might want to send this to an error tracking service
     });
 
-    // ===== PERFORMANCE MONITORING ===== //
-    
-    if ('performance' in window) {
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                const perfData = performance.getEntriesByType('navigation')[0];
-                if (perfData) {
-                    console.log('Page Load Performance:', {
-                        loadTime: perfData.loadEventEnd - perfData.loadEventStart,
-                        domContentLoaded: perfData.domContentLoadedEventEnd - perfData.domContentLoadedEventStart,
-                        totalTime: perfData.loadEventEnd - perfData.fetchStart
-                    });
-                }
-            }, 0);
-        });
-    }
-
     // ===== UTILITY FUNCTIONS FOR EXTERNAL USE ===== //
     
     // Make some functions globally available
-    window.SiteUtils = {
+    window.ElectricWaves = {
+        countdown: countdownTimer,
         scrollToElement: (selector) => {
             const element = document.querySelector(selector);
-            if (element && smoothScroll) {
-                smoothScroll.scrollToElement(element);
+            if (element) {
+                const headerHeight = document.querySelector('.site-header')?.offsetHeight || 0;
+                const targetPosition = element.offsetTop - headerHeight - 20;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
             }
         },
         toggleTheme: () => {
             if (themeManager) {
                 themeManager.toggleTheme();
             }
+        },
+        toggleMobileMenu: () => {
+            if (mobileMenu) {
+                mobileMenu.toggleMenu();
+            }
         }
     };
 
-    console.log('🚀 Site moderne initialisé avec succès!');
+    console.log('🎸 Electric Waves - Site responsive initialisé avec succès!');
 });
-
-// ===== SERVICE WORKER REGISTRATION ===== //
-
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-        // Uncomment when you have a service worker
-        // navigator.serviceWorker.register('/sw.js')
-        //     .then(registration => console.log('SW registered'))
-        //     .catch(error => console.log('SW registration failed'));
-    });
-}

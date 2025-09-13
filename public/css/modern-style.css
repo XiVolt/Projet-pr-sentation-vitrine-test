@@ -528,13 +528,280 @@ a:hover {
 
 .hero-title {
   font-size: 4rem;
-  font-weight: 700;
-  margin-bottom: var(--space-6);
-  color: var(--white);
-  opacity: 0;
-  transform: translateY(30px);
-  animation: fadeInUp 1s ease-out 0.5s forwards;
+  font-weight: 800;
+  margin-bottom: var(--space-4);
+  line-height: 1.1;
+  font-family: var(--font-heading);
 }
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: var(--space-8);
+  opacity: 0.9;
+  font-weight: 400;
+}
+
+.hero-actions {
+  display: flex;
+  gap: var(--space-4);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ===== ELECTRIC WAVES HERO SECTION ===== */
+
+.musical-hero {
+  background: linear-gradient(135deg, 
+    rgba(10, 10, 15, 0.9) 0%, 
+    rgba(26, 26, 46, 0.8) 50%, 
+    rgba(22, 33, 62, 0.9) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.band-photo-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, 
+    var(--primary) 0%, 
+    var(--secondary) 50%, 
+    var(--accent) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.stage-lights {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-around;
+  z-index: 2;
+}
+
+.light {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+.light.red { 
+  background: var(--primary); 
+  animation-delay: 0s;
+}
+
+.light.blue { 
+  background: var(--accent); 
+  animation-delay: 0.5s;
+}
+
+.light.purple { 
+  background: var(--secondary); 
+  animation-delay: 1s;
+}
+
+.band-silhouettes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-8);
+  font-size: 3rem;
+  opacity: 0.3;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(10, 10, 15, 0.7);
+  z-index: 2;
+}
+
+.band-logo {
+  font-family: var(--font-heading);
+  font-size: 4.5rem;
+  font-weight: 800;
+  background: linear-gradient(45deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 30px rgba(255, 64, 129, 0.5);
+  margin-bottom: var(--space-4);
+  letter-spacing: -2px;
+}
+
+.band-subtitle {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-8);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Countdown Timer Styles */
+.next-concert {
+  margin-bottom: var(--space-8);
+}
+
+.next-concert h3 {
+  font-size: 1.5rem;
+  color: var(--primary);
+  margin-bottom: var(--space-6);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.countdown-timer {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-6);
+  margin-bottom: var(--space-8);
+  flex-wrap: wrap;
+}
+
+.time-unit {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 64, 129, 0.3);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  min-width: 120px;
+  text-align: center;
+  transition: all var(--transition);
+}
+
+.time-unit:hover {
+  background: rgba(255, 64, 129, 0.1);
+  border-color: var(--primary);
+  box-shadow: var(--shadow-neon);
+  transform: translateY(-5px);
+}
+
+.time-number {
+  display: block;
+  font-size: 3rem;
+  font-weight: 700;
+  font-family: var(--font-heading);
+  color: var(--text-neon);
+  line-height: 1;
+  margin-bottom: var(--space-1);
+}
+
+.time-label {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Concert Info */
+.concert-info {
+  margin-bottom: var(--space-8);
+}
+
+.concert-date {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: var(--space-2);
+}
+
+.concert-venue {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-4);
+}
+
+.btn-tickets {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  background: var(--gradient-concert);
+  color: var(--white);
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all var(--transition);
+  box-shadow: var(--shadow-neon);
+}
+
+.btn-tickets:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg), var(--shadow-neon);
+}
+
+.btn-hero {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-4) var(--space-8);
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  transition: all var(--transition);
+  text-decoration: none;
+}
+
+/* Scroll Down Indicator */
+.scroll-down {
+  position: absolute;
+  bottom: var(--space-8);
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: var(--text-muted);
+  z-index: 3;
+  animation: float 3s ease-in-out infinite;
+}
+
+.scroll-text {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: var(--space-2);
+}
+
+.scroll-arrow {
+  font-size: 1.5rem;
+  animation: bounce 2s infinite;
+}
+
+/* Animations */
+@keyframes pulse {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-10px); }
+  60% { transform: translateY(-5px); }
+}
+
+/* ===== NAVIGATION STYLES ===== */
 
 .hero-subtitle {
   font-size: 1.5rem;
@@ -875,9 +1142,278 @@ a:hover {
   transform: translateY(0);
 }
 
-/* ===== RESPONSIVE DESIGN ===== */
+/* ===== ELECTRIC WAVES - RESPONSIVE DESIGN SYSTEM ===== */
 
-@media (max-width: 768px) {
+/* Breakpoint Variables */
+:root {
+  --breakpoint-xs: 320px;
+  --breakpoint-sm: 480px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1200px;
+  --breakpoint-xxl: 1400px;
+}
+
+/* ===== MOBILE FIRST RESPONSIVE DESIGN ===== */
+
+/* Extra Small Devices (320px and up) */
+@media (min-width: 320px) {
+  .container {
+    max-width: 100%;
+    padding: 0 var(--space-4);
+  }
+  
+  /* Ensure text is readable on small screens */
+  body {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  
+  /* Hero adaptations for very small screens */
+  .hero-section {
+    min-height: 80vh;
+    padding: var(--space-8) 0;
+  }
+  
+  .band-logo {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+  
+  .countdown-timer {
+    gap: var(--space-2);
+    flex-wrap: wrap;
+  }
+  
+  .time-unit {
+    min-width: 70px;
+  }
+  
+  .time-number {
+    font-size: 1.5rem;
+  }
+  
+  .time-label {
+    font-size: 0.7rem;
+  }
+}
+
+/* Small Devices (480px and up) */
+@media (min-width: 480px) {
+  .container {
+    padding: 0 var(--space-5);
+  }
+  
+  body {
+    font-size: 15px;
+  }
+  
+  .band-logo {
+    font-size: 2.2rem;
+  }
+  
+  .time-unit {
+    min-width: 80px;
+  }
+  
+  .time-number {
+    font-size: 1.8rem;
+  }
+  
+  .time-label {
+    font-size: 0.8rem;
+  }
+  
+  /* Grid improvements */
+  .team-stats .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-4);
+  }
+  
+  /* Button improvements */
+  .hero-actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-3);
+  }
+  
+  .btn-hero {
+    flex: 1;
+    min-width: 200px;
+    max-width: 250px;
+  }
+}
+
+/* Medium Devices - Tablets (768px and up) */
+@media (min-width: 768px) {
+  .container {
+    padding: 0 var(--space-6);
+  }
+  
+  body {
+    font-size: 16px;
+  }
+  
+  /* Navigation improvements */
+  .nav-menu {
+    position: static;
+    flex-direction: row;
+    background: transparent;
+    padding: 0;
+    box-shadow: none;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .nav-toggle {
+    display: none;
+  }
+  
+  /* Hero improvements */
+  .hero-section {
+    min-height: 90vh;
+  }
+  
+  .band-logo {
+    font-size: 3rem;
+  }
+  
+  .countdown-timer {
+    gap: var(--space-4);
+  }
+  
+  .time-unit {
+    min-width: 100px;
+  }
+  
+  .time-number {
+    font-size: 2.5rem;
+  }
+  
+  .time-label {
+    font-size: 1rem;
+  }
+  
+  /* Grid improvements */
+  .grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .team-stats .grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  /* Typography improvements */
+  h1 { font-size: 3rem; }
+  h2 { font-size: 2.5rem; }
+  h3 { font-size: 2rem; }
+  
+  .hero-actions {
+    flex-direction: row;
+    gap: var(--space-4);
+  }
+  
+  .btn-hero {
+    flex: 0;
+    min-width: auto;
+    max-width: none;
+  }
+}
+
+/* Large Devices - Desktop (1024px and up) */
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+    margin: 0 auto;
+  }
+  
+  /* Grid improvements */
+  .grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  /* Hero improvements */
+  .hero-section {
+    min-height: 100vh;
+  }
+  
+  .band-logo {
+    font-size: 4rem;
+  }
+  
+  .countdown-timer {
+    gap: var(--space-6);
+  }
+  
+  .time-unit {
+    min-width: 120px;
+  }
+  
+  .time-number {
+    font-size: 3rem;
+  }
+  
+  /* Typography improvements */
+  h1 { font-size: 3.5rem; }
+  h2 { font-size: 3rem; }
+  h3 { font-size: 2.25rem; }
+  
+  /* Card improvements */
+  .team-card,
+  .service-card,
+  .project-card {
+    transition: all var(--transition);
+  }
+  
+  .team-card:hover,
+  .service-card:hover,
+  .project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-neon);
+  }
+}
+
+/* Extra Large Devices (1200px and up) */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1200px;
+  }
+  
+  .band-logo {
+    font-size: 4.5rem;
+  }
+  
+  .time-number {
+    font-size: 3.5rem;
+  }
+  
+  /* Typography improvements */
+  h1 { font-size: 4rem; }
+  h2 { font-size: 3.5rem; }
+}
+
+/* Ultra Wide Screens (1400px and up) */
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1400px;
+  }
+  
+  .grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-8);
+  }
+  
+  .grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-8);
+  }
+}
+
+/* ===== LEGACY MOBILE STYLES (Backwards Compatibility) ===== */
+
+@media (max-width: 767px) {
   /* Typography adjustments */
   h1 { font-size: 2.5rem; }
   h2 { font-size: 2rem; }
@@ -916,6 +1452,7 @@ a:hover {
     visibility: hidden;
     transition: all var(--transition);
     z-index: var(--z-dropdown);
+    border-top: 1px solid var(--primary);
   }
 
   .nav-menu.active {
@@ -949,11 +1486,13 @@ a:hover {
   /* About section mobile */
   .about-stats {
     justify-content: space-around;
+    flex-wrap: wrap;
+    gap: var(--space-4);
   }
   
   .stat-item {
     flex: 1;
-    min-width: 80px;
+    min-width: 120px;
   }
   
   .about-features {
@@ -976,12 +1515,14 @@ a:hover {
   
   /* Projects section mobile */
   .portfolio-filters {
-    gap: var(--space-1);
+    gap: var(--space-2);
+    flex-wrap: wrap;
+    justify-content: center;
   }
   
   .filter-btn {
     font-size: 0.875rem;
-    padding: var(--space-1) var(--space-3);
+    padding: var(--space-2) var(--space-4);
   }
   
   .project-actions {
@@ -990,13 +1531,10 @@ a:hover {
   
   .project-tech {
     gap: var(--space-1);
+    flex-wrap: wrap;
   }
   
   /* Team section mobile */
-  .team-stats .grid-4 {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
   .member-skills {
     gap: var(--space-1);
   }
@@ -1027,11 +1565,13 @@ a:hover {
   .footer-main {
     grid-template-columns: 1fr;
     text-align: center;
+    gap: var(--space-6);
   }
   
   .footer-bottom-content {
     flex-direction: column;
     text-align: center;
+    gap: var(--space-3);
   }
   
   /* Back to top position */
@@ -1041,6 +1581,7 @@ a:hover {
   }
 }
 
+/* Small Mobile Devices (480px and down) */
 @media (max-width: 480px) {
   .hero-title {
     font-size: 2rem;
@@ -1051,7 +1592,129 @@ a:hover {
   }
   
   .card {
-    padding: var(--space-6);
+    padding: var(--space-4);
+  }
+  
+  .hero-section {
+    padding: var(--space-6) 0;
+  }
+  
+  .concert-info {
+    text-align: center;
+  }
+  
+  .concert-venue {
+    font-size: 0.9rem;
+  }
+  
+  .btn-tickets {
+    font-size: 0.9rem;
+    padding: var(--space-2) var(--space-4);
+  }
+}
+
+/* ===== TOUCH DEVICE OPTIMIZATIONS ===== */
+
+@media (hover: none) and (pointer: coarse) {
+  /* Remove hover effects on touch devices */
+  .team-card:hover,
+  .service-card:hover,
+  .project-card:hover,
+  .feature-item:hover {
+    transform: none;
+    box-shadow: none;
+  }
+  
+  /* Increase touch targets */
+  .nav-link,
+  .btn,
+  .filter-btn,
+  .social-btn {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Optimize touch scrolling */
+  .nav-menu {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* ===== HIGH DPI DISPLAYS ===== */
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  /* Optimize for retina displays */
+  .logo-icon {
+    font-size: 1.2em;
+  }
+  
+  /* Sharper borders */
+  .card,
+  .btn,
+  .form-input {
+    border-width: 0.5px;
+  }
+}
+
+/* ===== LANDSCAPE ORIENTATION (Mobile/Tablet) ===== */
+
+@media (orientation: landscape) and (max-height: 500px) {
+  .hero-section {
+    min-height: 100vh;
+    padding: var(--space-4) 0;
+  }
+  
+  .countdown-timer {
+    gap: var(--space-3);
+  }
+  
+  .time-unit {
+    min-width: 80px;
+  }
+  
+  .time-number {
+    font-size: 1.8rem;
+  }
+}
+
+/* ===== PRINT STYLES ===== */
+
+@media print {
+  * {
+    background: transparent !important;
+    color: black !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  
+  .nav-menu,
+  .nav-actions,
+  .back-to-top,
+  .scroll-progress-bar {
+    display: none !important;
+  }
+  
+  .hero-section {
+    page-break-after: always;
+  }
+  
+  h1, h2, h3 {
+    page-break-after: avoid;
+  }
+}
+
+/* ===== REDUCED MOTION PREFERENCES ===== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
 
