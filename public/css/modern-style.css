@@ -111,6 +111,32 @@
   box-sizing: border-box;
 }
 
+/* Prevent horizontal scrolling */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Ensure all content fits within viewport */
+* {
+  max-width: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Fix for images and media */
+img, video, svg, canvas {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+/* Fix for pre and code elements */
+pre, code {
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
 html {
   scroll-behavior: smooth;
   font-size: 16px;
@@ -127,6 +153,23 @@ body {
     radial-gradient(circle at 75% 75%, rgba(0, 229, 255, 0.1) 0%, transparent 50%);
   transition: all var(--transition);
   overflow-x: hidden;
+  min-width: 320px; /* Ensure minimum width */
+  font-size: 16px; /* Base font size */
+  line-height: 1.6;
+  
+  /* Mobile fixes */
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+  /* Add top padding for fixed header */
+  padding-top: 70px;
+}
+
+@media (min-width: 768px) {
+  body {
+    padding-top: 80px;
+  }
 }
 
 /* ===== MUSICAL ANIMATIONS ===== */
@@ -171,19 +214,22 @@ body {
   transition: width var(--transition-fast);
 }
 
-/* ===== MUSICAL TYPOGRAPHY ===== */
+/* ===== MOBILE-FIRST TYPOGRAPHY ===== */
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   font-weight: 700;
-  line-height: 1.1;
+  line-height: 1.2;
   color: var(--text-primary);
   margin-bottom: var(--space-4);
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  word-wrap: break-word;
+  hyphens: auto;
 }
 
+/* Mobile-first sizes */
 h1 { 
-  font-size: 4rem; 
+  font-size: 2rem; 
   font-weight: 800;
   background: var(--gradient-neon);
   -webkit-background-clip: text;
@@ -193,17 +239,60 @@ h1 {
 }
 
 h2 { 
-  font-size: 2.75rem;
+  font-size: 1.75rem;
   color: var(--text-electric);
 }
 
 h3 { 
-  font-size: 2.25rem;
-  color: var(--text-neon);
+  font-size: 1.5rem;
+  color: var(--primary);
 }
 
-h4 { font-size: 1.75rem; }
-h5 { font-size: 1.5rem; }
+h4 { 
+  font-size: 1.25rem;
+}
+
+h5 { 
+  font-size: 1.125rem;
+}
+
+h6 { 
+  font-size: 1rem;
+}
+
+/* Scale up for larger screens */
+@media (min-width: 768px) {
+  h1 { font-size: 3.5rem; }
+  h2 { font-size: 2.75rem; }
+  h3 { font-size: 2.25rem; }
+  h4 { font-size: 1.75rem; }
+  h5 { font-size: 1.5rem; }
+  h6 { font-size: 1.25rem; }
+}
+
+@media (min-width: 1024px) {
+  h1 { font-size: 4rem; }
+  h2 { font-size: 3rem; }
+  h3 { font-size: 2.5rem; }
+}
+
+/* Body text and paragraphs */
+p {
+  margin-bottom: var(--space-4);
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--primary-light);
+}
 h6 { font-size: 1.25rem; }
 
 p {
@@ -225,17 +314,45 @@ a:hover {
   text-shadow: 0 0 8px currentColor;
 }
 
-/* ===== LAYOUT UTILITIES ===== */
+/* ===== MOBILE-FIRST LAYOUT UTILITIES ===== */
 
 .container {
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 var(--space-6);
+  padding: 0 var(--space-4);
 }
 
 .section {
-  padding: var(--space-24) 0;
+  padding: var(--space-12) 0;
   position: relative;
+}
+
+/* Scale up for larger screens */
+@media (min-width: 480px) {
+  .container {
+    padding: 0 var(--space-5);
+  }
+  
+  .section {
+    padding: var(--space-16) 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 0 var(--space-6);
+  }
+  
+  .section {
+    padding: var(--space-20) 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section {
+    padding: var(--space-24) 0;
+  }
 }
 
 .section::before {
@@ -286,16 +403,7 @@ a:hover {
 }
 
 .navbar {
-  padding: var(--space-4) 0;
-}
-
-.nav-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 var(--space-6);
+  padding: var(--space-3) 0;
 }
 
 /* Logo */
@@ -305,22 +413,134 @@ a:hover {
   gap: var(--space-2);
   font-family: var(--font-heading);
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   color: var(--text-primary);
   text-decoration: none;
 }
 
 .logo-icon {
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   color: var(--primary);
 }
 
-/* Navigation Menu */
-.nav-menu {
+.logo-text {
+  background: linear-gradient(45deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@media (min-width: 480px) {
+  .navbar {
+    padding: var(--space-4) 0;
+  }
+  
+  .nav-brand .logo {
+    font-size: 1.5rem;
+  }
+  
+  .logo-icon {
+    font-size: 1.75rem;
+  }
+}
+
+.nav-container {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-4);
+  width: 100%;
+}
+
+/* Mobile-first navigation */
+.nav-menu {
+  position: fixed;
+  top: 70px;
+  left: 0;
+  right: 0;
+  background: var(--bg-primary);
+  flex-direction: column;
+  padding: var(--space-6);
+  gap: var(--space-4);
+  box-shadow: var(--shadow-xl);
+  transform: translateY(-100vh);
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition);
+  z-index: var(--z-dropdown);
+  border-top: 1px solid var(--primary);
   list-style: none;
-  gap: var(--space-8);
   margin: 0;
+  max-height: calc(100vh - 70px);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.nav-menu.active {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.nav-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--space-1);
+  z-index: var(--z-fixed);
+}
+
+.hamburger-line {
+  width: 24px;
+  height: 2px;
+  background: var(--text-primary);
+  transition: all var(--transition);
+  margin: 2px 0;
+}
+
+.nav-toggle.active .hamburger-line:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.nav-toggle.active .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle.active .hamburger-line:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Desktop navigation */
+@media (min-width: 768px) {
+  .nav-container {
+    padding: 0 var(--space-6);
+  }
+  
+  .nav-menu {
+    position: static;
+    flex-direction: row;
+    background: transparent;
+    padding: 0;
+    box-shadow: none;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    gap: var(--space-6);
+    max-height: none;
+    border: none;
+  }
+  
+  .nav-toggle {
+    display: none;
+  }
 }
 
 .nav-link {
@@ -641,7 +861,7 @@ a:hover {
 
 .band-logo {
   font-family: var(--font-heading);
-  font-size: 4.5rem;
+  font-size: 2rem;
   font-weight: 800;
   background: linear-gradient(45deg, var(--primary), var(--accent));
   -webkit-background-clip: text;
@@ -649,36 +869,40 @@ a:hover {
   background-clip: text;
   text-shadow: 0 0 30px rgba(255, 64, 129, 0.5);
   margin-bottom: var(--space-4);
-  letter-spacing: -2px;
+  letter-spacing: -1px;
+  text-align: center;
 }
 
 .band-subtitle {
-  font-size: 1.2rem;
+  font-size: 0.9rem;
   color: var(--text-secondary);
-  margin-bottom: var(--space-8);
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
-/* Countdown Timer Styles */
-.next-concert {
-  margin-bottom: var(--space-8);
-}
-
-.next-concert h3 {
-  font-size: 1.5rem;
-  color: var(--primary);
   margin-bottom: var(--space-6);
   text-transform: uppercase;
   letter-spacing: 1px;
+  text-align: center;
+}
+
+/* Countdown Timer Styles - Mobile First */
+.next-concert {
+  margin-bottom: var(--space-6);
+}
+
+.next-concert h3 {
+  font-size: 1.1rem;
+  color: var(--primary);
+  margin-bottom: var(--space-4);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
 }
 
 .countdown-timer {
   display: flex;
   justify-content: center;
-  gap: var(--space-6);
-  margin-bottom: var(--space-8);
+  gap: var(--space-2);
+  margin-bottom: var(--space-6);
   flex-wrap: wrap;
+  padding: 0 var(--space-2);
 }
 
 .time-unit {
@@ -686,22 +910,24 @@ a:hover {
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 64, 129, 0.3);
   border-radius: var(--radius-lg);
-  padding: var(--space-4);
-  min-width: 120px;
+  padding: var(--space-3);
+  min-width: 70px;
   text-align: center;
   transition: all var(--transition);
+  flex: 1;
+  max-width: 85px;
 }
 
 .time-unit:hover {
   background: rgba(255, 64, 129, 0.1);
   border-color: var(--primary);
   box-shadow: var(--shadow-neon);
-  transform: translateY(-5px);
+  transform: translateY(-2px);
 }
 
 .time-number {
   display: block;
-  font-size: 3rem;
+  font-size: 1.5rem;
   font-weight: 700;
   font-family: var(--font-heading);
   color: var(--text-neon);
@@ -710,26 +936,27 @@ a:hover {
 }
 
 .time-label {
-  font-size: 0.875rem;
+  font-size: 0.7rem;
   color: var(--text-muted);
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
 }
 
-/* Concert Info */
+/* Concert Info - Mobile First */
 .concert-info {
-  margin-bottom: var(--space-8);
+  margin-bottom: var(--space-6);
+  text-align: center;
 }
 
 .concert-date {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 600;
   color: var(--primary);
   margin-bottom: var(--space-2);
 }
 
 .concert-venue {
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: var(--text-secondary);
   margin-bottom: var(--space-4);
 }
@@ -740,12 +967,13 @@ a:hover {
   gap: var(--space-2);
   background: var(--gradient-concert);
   color: var(--white);
-  padding: var(--space-3) var(--space-6);
+  padding: var(--space-3) var(--space-5);
   border-radius: var(--radius-full);
   text-decoration: none;
   font-weight: 600;
   transition: all var(--transition);
   box-shadow: var(--shadow-neon);
+  font-size: 0.9rem;
 }
 
 .btn-tickets:hover {
@@ -753,16 +981,137 @@ a:hover {
   box-shadow: var(--shadow-lg), var(--shadow-neon);
 }
 
+/* Hero Actions - Mobile First */
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-6);
+  flex-wrap: wrap;
+  padding: 0 var(--space-4);
+}
+
 .btn-hero {
   display: inline-flex;
   align-items: center;
   gap: var(--space-2);
-  padding: var(--space-4) var(--space-8);
-  font-size: 1.1rem;
+  padding: var(--space-3) var(--space-6);
+  font-size: 0.9rem;
   font-weight: 600;
   border-radius: var(--radius-full);
   transition: all var(--transition);
   text-decoration: none;
+  min-width: 160px;
+  justify-content: center;
+}
+
+/* Responsive scaling for larger screens */
+@media (min-width: 480px) {
+  .band-logo {
+    font-size: 2.5rem;
+  }
+  
+  .band-subtitle {
+    font-size: 1rem;
+  }
+  
+  .next-concert h3 {
+    font-size: 1.3rem;
+  }
+  
+  .countdown-timer {
+    gap: var(--space-3);
+  }
+  
+  .time-unit {
+    min-width: 80px;
+    max-width: 90px;
+    padding: var(--space-4);
+  }
+  
+  .time-number {
+    font-size: 1.8rem;
+  }
+  
+  .time-label {
+    font-size: 0.8rem;
+  }
+  
+  .concert-date {
+    font-size: 1.4rem;
+  }
+  
+  .concert-venue {
+    font-size: 1.1rem;
+  }
+  
+  .btn-tickets {
+    font-size: 1rem;
+    padding: var(--space-3) var(--space-6);
+  }
+  
+  .btn-hero {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .band-logo {
+    font-size: 3.5rem;
+    letter-spacing: -2px;
+  }
+  
+  .band-subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .next-concert h3 {
+    font-size: 1.5rem;
+  }
+  
+  .countdown-timer {
+    gap: var(--space-4);
+  }
+  
+  .time-unit {
+    min-width: 100px;
+    max-width: 120px;
+  }
+  
+  .time-number {
+    font-size: 2.5rem;
+  }
+  
+  .time-label {
+    font-size: 1rem;
+  }
+  
+  .concert-date {
+    font-size: 1.5rem;
+  }
+  
+  .btn-hero {
+    font-size: 1.1rem;
+    min-width: auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .band-logo {
+    font-size: 4.5rem;
+  }
+  
+  .countdown-timer {
+    gap: var(--space-6);
+  }
+  
+  .time-unit {
+    min-width: 120px;
+  }
+  
+  .time-number {
+    font-size: 3rem;
+  }
 }
 
 /* Scroll Down Indicator */

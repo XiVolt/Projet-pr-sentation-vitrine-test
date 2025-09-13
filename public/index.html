@@ -3,8 +3,11 @@
 <head>
 	<meta name="generator" content="Hugo 0.147.7"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1314&amp;path=livereload" data-no-instant defer></script>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <title>Accueil- Electric Waves</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Electric Waves - Groupe de pop-rock indie français depuis 2021">
   
   
@@ -15,6 +18,56 @@
   
   
   <link rel="stylesheet" href="/css/modern-style.css">
+  
+  
+  <style>
+     
+    body { 
+      margin: 0; 
+      padding: 0; 
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #0a0a0f;
+      color: #ffffff;
+      overflow-x: hidden;
+      min-width: 320px;
+      padding-top: 70px;
+    }
+    
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(26, 26, 46, 0.95);
+      z-index: 1030;
+      padding: 12px 0;
+    }
+    
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 16px;
+    }
+    
+    .nav-toggle {
+      display: flex;
+      width: 32px;
+      height: 32px;
+      background: none;
+      border: none;
+    }
+    
+    .nav-menu {
+      display: none;
+    }
+    
+    @media (min-width: 768px) {
+      .nav-toggle { display: none; }
+      .nav-menu { display: flex; }
+      body { padding-top: 80px; }
+    }
+  </style>
   
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
