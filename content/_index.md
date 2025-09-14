@@ -1,5 +1,5 @@
 ---
 title: "Accueil"
 ---
-Bienvenue sur mon site vitrine !  
-Je suis Tristan, étudiant en BUT Informatique, passionné par le développement web.
+Bienvenue sur le site officiel d'Electric Waves !  
+Groupe de pop-rock indie français, nous électrisons les scènes depuis plusieurs années avec notre son unique et énergique.

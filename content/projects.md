@@ -1,7 +1,7 @@
 ---
-title: "Nos projets"
+title: "Nos albums"
 type: "page"
 layout: "projects"
 ---
 
-Découvrez nos réalisations les plus marquantes.
+Découvrez nos albums et singles qui ont marqué notre parcours musical.
